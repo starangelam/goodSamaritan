@@ -15,14 +15,14 @@ namespace GoodSamaritan.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Mission, Vision, Values.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "CORPORATE OFFICE";
 
             return View();
         }
