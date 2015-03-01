@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using goodSamaritan.Models;
+using GoodSamaritan.Models;
 
-namespace goodSamaritan.Controllers
+namespace GoodSamaritan.Controllers
 {
     [Authorize]
     public class AccountController : Controller

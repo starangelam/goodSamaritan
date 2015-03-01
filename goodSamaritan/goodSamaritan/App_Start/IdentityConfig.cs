@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using goodSamaritan.Models;
+using GoodSamaritan.Models;
 
-namespace goodSamaritan
+namespace GoodSamaritan
 {
     public class EmailService : IIdentityMessageService
     {

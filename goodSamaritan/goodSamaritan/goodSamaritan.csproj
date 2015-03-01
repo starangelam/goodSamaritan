@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F177DF1D-32AA-4442-BECF-AD976F87F6AE}</ProjectGuid>
+    <ProjectGuid>{6C755E5D-B8B0-4165-8F02-37F6C03B4BEC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>goodSamaritan</RootNamespace>
-    <AssemblyName>goodSamaritan</AssemblyName>
+    <RootNamespace>GoodSamaritan</RootNamespace>
+    <AssemblyName>GoodSamaritan</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -159,19 +159,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503010210470_Initial Create.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503010210470_Initial Create.Designer.cs">
-      <DependentUpon>201503010210470_Initial Create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503010402021_added to.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503010402021_added to.Designer.cs">
-      <DependentUpon>201503010402021_added to.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503011818053_InitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503011818053_InitialCreate.Designer.cs">
+      <DependentUpon>201503011818053_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -191,6 +186,7 @@
     <Compile Include="Models\Client\RepeatClient.cs" />
     <Compile Include="Models\Client\RiskLevel.cs" />
     <Compile Include="Models\Client\RiskStatus.cs" />
+    <Compile Include="Models\Client\Service.cs" />
     <Compile Include="Models\Client\StatusOfFile.cs" />
     <Compile Include="Models\Client\VictimOfIncident.cs" />
     <Compile Include="Models\Client\Year.cs" />
@@ -208,7 +204,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Compile Include="Models\Client\Service.cs" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -256,11 +251,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Clients\Create.cshtml" />
-    <Content Include="Views\Clients\Delete.cshtml" />
-    <Content Include="Views\Clients\Details.cshtml" />
-    <Content Include="Views\Clients\Edit.cshtml" />
-    <Content Include="Views\Clients\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -273,11 +263,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503010210470_Initial Create.resx">
-      <DependentUpon>201503010210470_Initial Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503010402021_added to.resx">
-      <DependentUpon>201503010402021_added to.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503011818053_InitialCreate.resx">
+      <DependentUpon>201503011818053_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -296,9 +283,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50249</DevelopmentServerPort>
+          <DevelopmentServerPort>49569</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50249/</IISUrl>
+          <IISUrl>http://localhost:49569/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

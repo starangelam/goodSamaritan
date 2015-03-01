@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using goodSamaritan.Models;
+using GoodSamaritan.Models;
 
-namespace goodSamaritan
+namespace GoodSamaritan
 {
     public partial class Startup
     {

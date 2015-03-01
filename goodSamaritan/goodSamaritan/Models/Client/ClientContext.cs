@@ -11,6 +11,7 @@ namespace goodSamaritan.Models.Client
         public ClientContext() : base("DefaultConnection") { }
 
         public DbSet<Client> Clients { get; set; }
+
         public DbSet<AbuserRelationship> AbuserRelationships { get; set; }
         public DbSet<Age> Ages { get; set; }
         public DbSet<AssignedWorker> AssignedWorkers { get; set; }

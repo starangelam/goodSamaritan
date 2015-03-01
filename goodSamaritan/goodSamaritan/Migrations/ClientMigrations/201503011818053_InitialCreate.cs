@@ -1,9 +1,9 @@
-namespace goodSamaritan.Migrations.ClientMigrations
+namespace GoodSamaritan.Migrations.ClientMigrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addedto : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,83 @@ namespace goodSamaritan.Migrations.ClientMigrations
                         Relationship = c.String(),
                     })
                 .PrimaryKey(t => t.AbuserRelationshipId);
+            
+            CreateTable(
+                "dbo.Clients",
+                c => new
+                    {
+                        ClientId = c.Int(nullable: false, identity: true),
+                        YearId = c.Int(nullable: false),
+                        Month = c.Int(nullable: false),
+                        Day = c.Int(nullable: false),
+                        Surname = c.String(),
+                        FirstName = c.String(),
+                        PoliceFileNumber = c.String(),
+                        CourtFileNumber = c.Int(nullable: false),
+                        SWCFileNumber = c.Int(nullable: false),
+                        RiskLevelId = c.Int(nullable: false),
+                        CrisisId = c.Int(nullable: false),
+                        ServiceId = c.Int(nullable: false),
+                        ProgramId = c.Int(nullable: false),
+                        AssessmentAssgndTo = c.String(),
+                        RiskStatusId = c.Int(nullable: false),
+                        AssignedWorkerId = c.Int(nullable: false),
+                        ReferralSourceId = c.Int(nullable: false),
+                        ReferralContactId = c.Int(nullable: false),
+                        IncidentId = c.Int(nullable: false),
+                        AbuserSFName = c.String(),
+                        AbuserRelationshipId = c.Int(nullable: false),
+                        VictimOfIncidentId = c.Int(nullable: false),
+                        FamilyViolenceFildeId = c.Int(nullable: false),
+                        EthnicityId = c.Int(nullable: false),
+                        AgeId = c.Int(nullable: false),
+                        RepeatClientId = c.Int(nullable: false),
+                        DuplicateFileId = c.Int(nullable: false),
+                        NumChildrenZeroToSix = c.Int(nullable: false),
+                        NumChildrenSevenToTwelve = c.Int(nullable: false),
+                        StatusOfFileId = c.Int(nullable: false),
+                        DateLastTransferred = c.DateTime(nullable: false),
+                        DateClosed = c.DateTime(nullable: false),
+                        DateReOpened = c.DateTime(nullable: false),
+                        FamilyViolenceFile_FamilyViolenceFileId = c.Int(),
+                    })
+                .PrimaryKey(t => t.ClientId)
+                .ForeignKey("dbo.AbuserRelationships", t => t.AbuserRelationshipId, cascadeDelete: true)
+                .ForeignKey("dbo.Ages", t => t.AgeId, cascadeDelete: true)
+                .ForeignKey("dbo.AssignedWorkers", t => t.AssignedWorkerId, cascadeDelete: true)
+                .ForeignKey("dbo.Crises", t => t.CrisisId, cascadeDelete: true)
+                .ForeignKey("dbo.DuplicateFiles", t => t.DuplicateFileId, cascadeDelete: true)
+                .ForeignKey("dbo.Ethnicities", t => t.EthnicityId, cascadeDelete: true)
+                .ForeignKey("dbo.FamilyViolenceFiles", t => t.FamilyViolenceFile_FamilyViolenceFileId)
+                .ForeignKey("dbo.Years", t => t.YearId, cascadeDelete: true)
+                .ForeignKey("dbo.Incidents", t => t.IncidentId, cascadeDelete: true)
+                .ForeignKey("dbo.Programs", t => t.ProgramId, cascadeDelete: true)
+                .ForeignKey("dbo.ReferralContacts", t => t.ReferralContactId, cascadeDelete: true)
+                .ForeignKey("dbo.ReferralSources", t => t.ReferralSourceId, cascadeDelete: true)
+                .ForeignKey("dbo.RepeatClients", t => t.RepeatClientId, cascadeDelete: true)
+                .ForeignKey("dbo.RiskLevels", t => t.RiskLevelId, cascadeDelete: true)
+                .ForeignKey("dbo.RiskStatus", t => t.RiskStatusId, cascadeDelete: true)
+                .ForeignKey("dbo.Services", t => t.ServiceId, cascadeDelete: true)
+                .ForeignKey("dbo.StatusOfFiles", t => t.StatusOfFileId, cascadeDelete: true)
+                .ForeignKey("dbo.VictimOfIncidents", t => t.VictimOfIncidentId, cascadeDelete: true)
+                .Index(t => t.YearId)
+                .Index(t => t.RiskLevelId)
+                .Index(t => t.CrisisId)
+                .Index(t => t.ServiceId)
+                .Index(t => t.ProgramId)
+                .Index(t => t.RiskStatusId)
+                .Index(t => t.AssignedWorkerId)
+                .Index(t => t.ReferralSourceId)
+                .Index(t => t.ReferralContactId)
+                .Index(t => t.IncidentId)
+                .Index(t => t.AbuserRelationshipId)
+                .Index(t => t.VictimOfIncidentId)
+                .Index(t => t.EthnicityId)
+                .Index(t => t.AgeId)
+                .Index(t => t.RepeatClientId)
+                .Index(t => t.DuplicateFileId)
+                .Index(t => t.StatusOfFileId)
+                .Index(t => t.FamilyViolenceFile_FamilyViolenceFileId);
             
             CreateTable(
                 "dbo.Ages",
@@ -69,6 +146,15 @@ namespace goodSamaritan.Migrations.ClientMigrations
                         Exists = c.String(),
                     })
                 .PrimaryKey(t => t.FamilyViolenceFileId);
+            
+            CreateTable(
+                "dbo.Years",
+                c => new
+                    {
+                        YearId = c.Int(nullable: false, identity: true),
+                        Range = c.String(),
+                    })
+                .PrimaryKey(t => t.YearId);
             
             CreateTable(
                 "dbo.Incidents",
@@ -160,65 +246,6 @@ namespace goodSamaritan.Migrations.ClientMigrations
                     })
                 .PrimaryKey(t => t.VictimOfIncidentId);
             
-            AddColumn("dbo.Clients", "RiskLevelId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "CrisisId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "ServiceId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "ProgramId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "AssessmentAssgndTo", c => c.String());
-            AddColumn("dbo.Clients", "RiskStatusId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "AssignedWorkerId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "ReferralSourceId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "ReferralContactId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "IncidentId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "AbuserSFName", c => c.String());
-            AddColumn("dbo.Clients", "AbuserRelationshipId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "VictimOfIncidentId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "FamilyViolenceFildeId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "EthnicityId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "AgeId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "RepeatClientId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "DuplicateFileId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "NumChildrenZeroToSix", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "NumChildrenSevenToTwelve", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "StatusOfFileId", c => c.Int(nullable: false));
-            AddColumn("dbo.Clients", "DateLastTransferred", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Clients", "DateClosed", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Clients", "DateReOpened", c => c.DateTime(nullable: false));
-            AddColumn("dbo.Clients", "FamilyViolenceFile_FamilyViolenceFileId", c => c.Int());
-            CreateIndex("dbo.Clients", "RiskLevelId");
-            CreateIndex("dbo.Clients", "CrisisId");
-            CreateIndex("dbo.Clients", "ServiceId");
-            CreateIndex("dbo.Clients", "ProgramId");
-            CreateIndex("dbo.Clients", "RiskStatusId");
-            CreateIndex("dbo.Clients", "AssignedWorkerId");
-            CreateIndex("dbo.Clients", "ReferralSourceId");
-            CreateIndex("dbo.Clients", "ReferralContactId");
-            CreateIndex("dbo.Clients", "IncidentId");
-            CreateIndex("dbo.Clients", "AbuserRelationshipId");
-            CreateIndex("dbo.Clients", "VictimOfIncidentId");
-            CreateIndex("dbo.Clients", "EthnicityId");
-            CreateIndex("dbo.Clients", "AgeId");
-            CreateIndex("dbo.Clients", "RepeatClientId");
-            CreateIndex("dbo.Clients", "DuplicateFileId");
-            CreateIndex("dbo.Clients", "StatusOfFileId");
-            CreateIndex("dbo.Clients", "FamilyViolenceFile_FamilyViolenceFileId");
-            AddForeignKey("dbo.Clients", "AbuserRelationshipId", "dbo.AbuserRelationships", "AbuserRelationshipId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "AgeId", "dbo.Ages", "AgeId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "AssignedWorkerId", "dbo.AssignedWorkers", "AssignedWorkerId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "CrisisId", "dbo.Crises", "CrisisId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "DuplicateFileId", "dbo.DuplicateFiles", "DuplicateFileId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "EthnicityId", "dbo.Ethnicities", "EthnicityId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "FamilyViolenceFile_FamilyViolenceFileId", "dbo.FamilyViolenceFiles", "FamilyViolenceFileId");
-            AddForeignKey("dbo.Clients", "IncidentId", "dbo.Incidents", "IncidentId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "ProgramId", "dbo.Programs", "ProgramId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "ReferralContactId", "dbo.ReferralContacts", "ReferralContactId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "ReferralSourceId", "dbo.ReferralSources", "ReferralSourceId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "RepeatClientId", "dbo.RepeatClients", "RepeatClientId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "RiskLevelId", "dbo.RiskLevels", "RiskLevelId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "RiskStatusId", "dbo.RiskStatus", "RiskStatusId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "ServiceId", "dbo.Services", "ServiceId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "StatusOfFileId", "dbo.StatusOfFiles", "StatusOfFileId", cascadeDelete: true);
-            AddForeignKey("dbo.Clients", "VictimOfIncidentId", "dbo.VictimOfIncidents", "VictimOfIncidentId", cascadeDelete: true);
         }
         
         public override void Down()
@@ -233,6 +260,7 @@ namespace goodSamaritan.Migrations.ClientMigrations
             DropForeignKey("dbo.Clients", "ReferralContactId", "dbo.ReferralContacts");
             DropForeignKey("dbo.Clients", "ProgramId", "dbo.Programs");
             DropForeignKey("dbo.Clients", "IncidentId", "dbo.Incidents");
+            DropForeignKey("dbo.Clients", "YearId", "dbo.Years");
             DropForeignKey("dbo.Clients", "FamilyViolenceFile_FamilyViolenceFileId", "dbo.FamilyViolenceFiles");
             DropForeignKey("dbo.Clients", "EthnicityId", "dbo.Ethnicities");
             DropForeignKey("dbo.Clients", "DuplicateFileId", "dbo.DuplicateFiles");
@@ -257,31 +285,7 @@ namespace goodSamaritan.Migrations.ClientMigrations
             DropIndex("dbo.Clients", new[] { "ServiceId" });
             DropIndex("dbo.Clients", new[] { "CrisisId" });
             DropIndex("dbo.Clients", new[] { "RiskLevelId" });
-            DropColumn("dbo.Clients", "FamilyViolenceFile_FamilyViolenceFileId");
-            DropColumn("dbo.Clients", "DateReOpened");
-            DropColumn("dbo.Clients", "DateClosed");
-            DropColumn("dbo.Clients", "DateLastTransferred");
-            DropColumn("dbo.Clients", "StatusOfFileId");
-            DropColumn("dbo.Clients", "NumChildrenSevenToTwelve");
-            DropColumn("dbo.Clients", "NumChildrenZeroToSix");
-            DropColumn("dbo.Clients", "DuplicateFileId");
-            DropColumn("dbo.Clients", "RepeatClientId");
-            DropColumn("dbo.Clients", "AgeId");
-            DropColumn("dbo.Clients", "EthnicityId");
-            DropColumn("dbo.Clients", "FamilyViolenceFildeId");
-            DropColumn("dbo.Clients", "VictimOfIncidentId");
-            DropColumn("dbo.Clients", "AbuserRelationshipId");
-            DropColumn("dbo.Clients", "AbuserSFName");
-            DropColumn("dbo.Clients", "IncidentId");
-            DropColumn("dbo.Clients", "ReferralContactId");
-            DropColumn("dbo.Clients", "ReferralSourceId");
-            DropColumn("dbo.Clients", "AssignedWorkerId");
-            DropColumn("dbo.Clients", "RiskStatusId");
-            DropColumn("dbo.Clients", "AssessmentAssgndTo");
-            DropColumn("dbo.Clients", "ProgramId");
-            DropColumn("dbo.Clients", "ServiceId");
-            DropColumn("dbo.Clients", "CrisisId");
-            DropColumn("dbo.Clients", "RiskLevelId");
+            DropIndex("dbo.Clients", new[] { "YearId" });
             DropTable("dbo.VictimOfIncidents");
             DropTable("dbo.StatusOfFiles");
             DropTable("dbo.Services");
@@ -292,12 +296,14 @@ namespace goodSamaritan.Migrations.ClientMigrations
             DropTable("dbo.ReferralContacts");
             DropTable("dbo.Programs");
             DropTable("dbo.Incidents");
+            DropTable("dbo.Years");
             DropTable("dbo.FamilyViolenceFiles");
             DropTable("dbo.Ethnicities");
             DropTable("dbo.DuplicateFiles");
             DropTable("dbo.Crises");
             DropTable("dbo.AssignedWorkers");
             DropTable("dbo.Ages");
+            DropTable("dbo.Clients");
             DropTable("dbo.AbuserRelationships");
         }
     }

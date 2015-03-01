@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using goodSamaritan;
-using goodSamaritan.Controllers;
+using GoodSamaritan;
+using GoodSamaritan.Controllers;
 
-namespace goodSamaritan.Tests.Controllers
+namespace GoodSamaritan.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

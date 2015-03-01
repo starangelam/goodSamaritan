@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(goodSamaritan.Startup))]
-namespace goodSamaritan
+[assembly: OwinStartupAttribute(typeof(GoodSamaritan.Startup))]
+namespace GoodSamaritan
 {
     public partial class Startup
     {

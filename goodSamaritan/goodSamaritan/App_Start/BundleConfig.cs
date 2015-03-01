@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace goodSamaritan
+namespace GoodSamaritan
 {
     public class BundleConfig
     {

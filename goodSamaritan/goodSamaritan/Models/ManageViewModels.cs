@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace goodSamaritan.Models
+namespace GoodSamaritan.Models
 {
     public class IndexViewModel
     {

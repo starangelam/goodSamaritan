@@ -1,4 +1,4 @@
-namespace goodSamaritan.Migrations.ClientMigrations
+namespace GoodSamaritan.Migrations.ClientMigrations
 {
     using goodSamaritan.Models.Client;
     using System;
@@ -494,11 +494,11 @@ namespace goodSamaritan.Migrations.ClientMigrations
 
                         AbuserSFName = "Doe, Jane",
 
-                        AbuserRelationshipId = (context.AbuserRelationships.Where(c => c.Relationship == "Acquaintance").FirstOrDefault().AbuserRelationshipId),
+                        AbuserRelationshipId = (context.AbuserRelationships.Where(c => c.Relationship == "Other").FirstOrDefault().AbuserRelationshipId),
 
                         VictimOfIncidentId = (context.VictimsOfIncidents.Where(c => c.Type == "Primary").FirstOrDefault().VictimOfIncidentId),
 
-                        FamilyViolenceFildeId = (context.FamilyViolenceFiles.Where(c => c.Exists == "No").FirstOrDefault().FamilyViolenceFileId),
+                        FamilyViolenceFildeId = (context.FamilyViolenceFiles.Where(c => c.Exists == "N/A").FirstOrDefault().FamilyViolenceFileId),
 
                         Gender = 'M',
 
