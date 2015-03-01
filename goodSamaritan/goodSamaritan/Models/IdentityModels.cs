@@ -29,5 +29,9 @@ namespace goodSamaritan.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<goodSamaritan.Models.Client.Client> Clients { get; set; }
+
+        public System.Data.Entity.DbSet<goodSamaritan.Models.Client.Year> Years { get; set; }
     }
 }

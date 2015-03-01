@@ -159,13 +159,40 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503010210470_Initial Create.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503010210470_Initial Create.Designer.cs">
+      <DependentUpon>201503010210470_Initial Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503010402021_added to.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503010402021_added to.Designer.cs">
+      <DependentUpon>201503010402021_added to.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Client\AbuserRelationship.cs" />
+    <Compile Include="Models\Client\Age.cs" />
+    <Compile Include="Models\Client\AssignedWorker.cs" />
     <Compile Include="Models\Client\Client.cs" />
+    <Compile Include="Models\Client\ClientContext.cs" />
+    <Compile Include="Models\Client\Crisis.cs" />
+    <Compile Include="Models\Client\DuplicateFile.cs" />
+    <Compile Include="Models\Client\Ethnicity.cs" />
+    <Compile Include="Models\Client\FamilyViolenceFile.cs" />
+    <Compile Include="Models\Client\Incident.cs" />
+    <Compile Include="Models\Client\Program.cs" />
+    <Compile Include="Models\Client\ReferralContact.cs" />
+    <Compile Include="Models\Client\ReferralSource.cs" />
+    <Compile Include="Models\Client\RepeatClient.cs" />
+    <Compile Include="Models\Client\RiskLevel.cs" />
+    <Compile Include="Models\Client\RiskStatus.cs" />
+    <Compile Include="Models\Client\StatusOfFile.cs" />
+    <Compile Include="Models\Client\VictimOfIncident.cs" />
     <Compile Include="Models\Client\Year.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -181,6 +208,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Compile Include="Models\Client\Service.cs" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -228,6 +256,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -238,6 +271,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503010210470_Initial Create.resx">
+      <DependentUpon>201503010210470_Initial Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503010402021_added to.resx">
+      <DependentUpon>201503010402021_added to.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
