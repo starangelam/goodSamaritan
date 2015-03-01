@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -13,7 +14,9 @@ namespace goodSamaritan.Models.Client
         public Year FiscalYear { get; set; }
         public int YearId { get; set; }
 
+        [Range(1,12)]
         public int Month { get; set; }
+        [Range(1,31)]
         public int Day { get; set; }
         public string Surname { get; set; }
         public string FirstName { get; set; }
