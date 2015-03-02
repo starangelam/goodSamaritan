@@ -1,0 +1,7 @@
+﻿# run only once per project
+enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations\ClientMigrations
+
+# ran on every database change
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration

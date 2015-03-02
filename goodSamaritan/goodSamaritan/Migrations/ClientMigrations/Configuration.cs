@@ -30,7 +30,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     Relationship = "DNA"
                 }, new AbuserRelationship
                 {
-                    Relationship = "Ex-Partne"
+                    Relationship = "Ex-Partner"
                 }, new AbuserRelationship
                 {
                     Relationship = "Friend"
