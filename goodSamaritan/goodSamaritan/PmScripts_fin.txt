@@ -1,0 +1,7 @@
+﻿enable-migrations -ContextTypeName TeamContext -MigrationsDirectory Migrations\ClientMigrations
+
+add-migration -ConfigurationTypeName CodeFirst.Migrations.TeamMigrations.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
+
+If you make additional changes to your model that you want to include in this migration, then you can re-scaffold it by running 'Add-Migration InitialCreate' again.
