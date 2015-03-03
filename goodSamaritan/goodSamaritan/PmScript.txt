@@ -5,3 +5,12 @@ enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "InitialCreate"
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
+
+# --------------
+# ApplicationDbContext
+
+enable-migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\IdentityMigration
+
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigration.Configuration "InitialCreate"
+
+update-database -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigration.Configuration
