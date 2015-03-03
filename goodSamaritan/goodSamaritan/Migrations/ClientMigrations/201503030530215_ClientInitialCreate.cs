@@ -3,7 +3,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class ClientInitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -42,7 +42,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         AbuserSFName = c.String(),
                         AbuserRelationshipId = c.Int(nullable: false),
                         VictimOfIncidentId = c.Int(nullable: false),
-                        FamilyViolenceFildeId = c.Int(nullable: false),
+                        FamilyViolenceFileId = c.Int(nullable: false),
                         EthnicityId = c.Int(nullable: false),
                         AgeId = c.Int(nullable: false),
                         RepeatClientId = c.Int(nullable: false),
@@ -53,7 +53,6 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         DateLastTransferred = c.DateTime(nullable: false),
                         DateClosed = c.DateTime(nullable: false),
                         DateReOpened = c.DateTime(nullable: false),
-                        FamilyViolenceFile_FamilyViolenceFileId = c.Int(),
                     })
                 .PrimaryKey(t => t.ClientId)
                 .ForeignKey("dbo.AbuserRelationships", t => t.AbuserRelationshipId, cascadeDelete: true)
@@ -62,7 +61,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 .ForeignKey("dbo.Crises", t => t.CrisisId, cascadeDelete: true)
                 .ForeignKey("dbo.DuplicateFiles", t => t.DuplicateFileId, cascadeDelete: true)
                 .ForeignKey("dbo.Ethnicities", t => t.EthnicityId, cascadeDelete: true)
-                .ForeignKey("dbo.FamilyViolenceFiles", t => t.FamilyViolenceFile_FamilyViolenceFileId)
+                .ForeignKey("dbo.FamilyViolenceFiles", t => t.FamilyViolenceFileId, cascadeDelete: true)
                 .ForeignKey("dbo.Years", t => t.YearId, cascadeDelete: true)
                 .ForeignKey("dbo.Incidents", t => t.IncidentId, cascadeDelete: true)
                 .ForeignKey("dbo.Programs", t => t.ProgramId, cascadeDelete: true)
@@ -86,12 +85,12 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 .Index(t => t.IncidentId)
                 .Index(t => t.AbuserRelationshipId)
                 .Index(t => t.VictimOfIncidentId)
+                .Index(t => t.FamilyViolenceFileId)
                 .Index(t => t.EthnicityId)
                 .Index(t => t.AgeId)
                 .Index(t => t.RepeatClientId)
                 .Index(t => t.DuplicateFileId)
-                .Index(t => t.StatusOfFileId)
-                .Index(t => t.FamilyViolenceFile_FamilyViolenceFileId);
+                .Index(t => t.StatusOfFileId);
             
             CreateTable(
                 "dbo.Ages",
@@ -261,19 +260,19 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropForeignKey("dbo.Clients", "ProgramId", "dbo.Programs");
             DropForeignKey("dbo.Clients", "IncidentId", "dbo.Incidents");
             DropForeignKey("dbo.Clients", "YearId", "dbo.Years");
-            DropForeignKey("dbo.Clients", "FamilyViolenceFile_FamilyViolenceFileId", "dbo.FamilyViolenceFiles");
+            DropForeignKey("dbo.Clients", "FamilyViolenceFileId", "dbo.FamilyViolenceFiles");
             DropForeignKey("dbo.Clients", "EthnicityId", "dbo.Ethnicities");
             DropForeignKey("dbo.Clients", "DuplicateFileId", "dbo.DuplicateFiles");
             DropForeignKey("dbo.Clients", "CrisisId", "dbo.Crises");
             DropForeignKey("dbo.Clients", "AssignedWorkerId", "dbo.AssignedWorkers");
             DropForeignKey("dbo.Clients", "AgeId", "dbo.Ages");
             DropForeignKey("dbo.Clients", "AbuserRelationshipId", "dbo.AbuserRelationships");
-            DropIndex("dbo.Clients", new[] { "FamilyViolenceFile_FamilyViolenceFileId" });
             DropIndex("dbo.Clients", new[] { "StatusOfFileId" });
             DropIndex("dbo.Clients", new[] { "DuplicateFileId" });
             DropIndex("dbo.Clients", new[] { "RepeatClientId" });
             DropIndex("dbo.Clients", new[] { "AgeId" });
             DropIndex("dbo.Clients", new[] { "EthnicityId" });
+            DropIndex("dbo.Clients", new[] { "FamilyViolenceFileId" });
             DropIndex("dbo.Clients", new[] { "VictimOfIncidentId" });
             DropIndex("dbo.Clients", new[] { "AbuserRelationshipId" });
             DropIndex("dbo.Clients", new[] { "IncidentId" });

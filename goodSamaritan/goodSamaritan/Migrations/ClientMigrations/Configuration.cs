@@ -498,7 +498,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
                         VictimOfIncidentId = (context.VictimsOfIncidents.Where(c => c.Type == "Primary").FirstOrDefault().VictimOfIncidentId),
 
-                        FamilyViolenceFildeId = (context.FamilyViolenceFiles.Where(c => c.Exists == "N/A").FirstOrDefault().FamilyViolenceFileId),
+                        FamilyViolenceFileId = (context.FamilyViolenceFiles.Where(c => c.Exists == "No").FirstOrDefault().FamilyViolenceFileId),
 
                         Gender = 'M',
 

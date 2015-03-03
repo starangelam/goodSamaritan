@@ -74,7 +74,7 @@ namespace goodSamaritan.Models.Client
 
         // From Lookup Tables
         public FamilyViolenceFile FamilyViolenceFile { get; set; }
-        public int FamilyViolenceFildeId { get; set; }
+        public int FamilyViolenceFileId { get; set; }
 
         public char Gender { get; set; }
 
