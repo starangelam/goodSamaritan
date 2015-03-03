@@ -13,7 +13,7 @@ namespace GoodSamaritan.Controllers
 {
     public class ClientsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ClientContext db = new ClientContext();
 
         // GET: Clients
         public ActionResult Index()
@@ -53,10 +53,10 @@ namespace GoodSamaritan.Controllers
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source");
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "IsRepeat");
             ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "Level");
-            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "Status");
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatuses, "RiskStatusId", "Status");
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "Type");
-            ViewBag.StatusOfFileId = new SelectList(db.StatusOfFiles, "StatusOfFileId", "Status");
-            ViewBag.VictimOfIncidentId = new SelectList(db.VictimOfIncidents, "VictimOfIncidentId", "Type");
+            ViewBag.StatusOfFileId = new SelectList(db.StatusesOfFiles, "StatusOfFileId", "Status");
+            ViewBag.VictimOfIncidentId = new SelectList(db.VictimsOfIncidents, "VictimOfIncidentId", "Type");
             return View();
         }
 
@@ -87,10 +87,10 @@ namespace GoodSamaritan.Controllers
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "IsRepeat", client.RepeatClientId);
             ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "Level", client.RiskLevelId);
-            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "Status", client.RiskStatusId);
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatuses, "RiskStatusId", "Status", client.RiskStatusId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "Type", client.ServiceId);
-            ViewBag.StatusOfFileId = new SelectList(db.StatusOfFiles, "StatusOfFileId", "Status", client.StatusOfFileId);
-            ViewBag.VictimOfIncidentId = new SelectList(db.VictimOfIncidents, "VictimOfIncidentId", "Type", client.VictimOfIncidentId);
+            ViewBag.StatusOfFileId = new SelectList(db.StatusesOfFiles, "StatusOfFileId", "Status", client.StatusOfFileId);
+            ViewBag.VictimOfIncidentId = new SelectList(db.VictimsOfIncidents, "VictimOfIncidentId", "Type", client.VictimOfIncidentId);
             return View(client);
         }
 
@@ -119,10 +119,10 @@ namespace GoodSamaritan.Controllers
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "IsRepeat", client.RepeatClientId);
             ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "Level", client.RiskLevelId);
-            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "Status", client.RiskStatusId);
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatuses, "RiskStatusId", "Status", client.RiskStatusId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "Type", client.ServiceId);
-            ViewBag.StatusOfFileId = new SelectList(db.StatusOfFiles, "StatusOfFileId", "Status", client.StatusOfFileId);
-            ViewBag.VictimOfIncidentId = new SelectList(db.VictimOfIncidents, "VictimOfIncidentId", "Type", client.VictimOfIncidentId);
+            ViewBag.StatusOfFileId = new SelectList(db.StatusesOfFiles, "StatusOfFileId", "Status", client.StatusOfFileId);
+            ViewBag.VictimOfIncidentId = new SelectList(db.VictimsOfIncidents, "VictimOfIncidentId", "Type", client.VictimOfIncidentId);
             return View(client);
         }
 
@@ -152,10 +152,10 @@ namespace GoodSamaritan.Controllers
             ViewBag.ReferralSourceId = new SelectList(db.ReferralSources, "ReferralSourceId", "Source", client.ReferralSourceId);
             ViewBag.RepeatClientId = new SelectList(db.RepeatClients, "RepeatClientId", "IsRepeat", client.RepeatClientId);
             ViewBag.RiskLevelId = new SelectList(db.RiskLevels, "RiskLevelId", "Level", client.RiskLevelId);
-            ViewBag.RiskStatusId = new SelectList(db.RiskStatus, "RiskStatusId", "Status", client.RiskStatusId);
+            ViewBag.RiskStatusId = new SelectList(db.RiskStatuses, "RiskStatusId", "Status", client.RiskStatusId);
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "Type", client.ServiceId);
-            ViewBag.StatusOfFileId = new SelectList(db.StatusOfFiles, "StatusOfFileId", "Status", client.StatusOfFileId);
-            ViewBag.VictimOfIncidentId = new SelectList(db.VictimOfIncidents, "VictimOfIncidentId", "Type", client.VictimOfIncidentId);
+            ViewBag.StatusOfFileId = new SelectList(db.StatusesOfFiles, "StatusOfFileId", "Status", client.StatusOfFileId);
+            ViewBag.VictimOfIncidentId = new SelectList(db.VictimsOfIncidents, "VictimOfIncidentId", "Type", client.VictimOfIncidentId);
             return View(client);
         }
 
