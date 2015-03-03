@@ -245,10 +245,248 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     })
                 .PrimaryKey(t => t.VictimOfIncidentId);
             
+            CreateTable(
+                "dbo.BadDateReports",
+                c => new
+                    {
+                        BadDateReportId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.BadDateReportId);
+            
+            CreateTable(
+                "dbo.Smarts",
+                c => new
+                    {
+                        SmartId = c.Int(nullable: false, identity: true),
+                        ClientId = c.Int(nullable: false),
+                        SexExploitationId = c.Int(nullable: false),
+                        MultiplePerpsId = c.Int(nullable: false),
+                        DrugFacilitatedId = c.Int(nullable: false),
+                        CityOfAssaultId = c.Int(nullable: false),
+                        CityOfResidenceId = c.Int(nullable: false),
+                        AccompanimentMinutes = c.Int(nullable: false),
+                        ReferringHospitalId = c.Int(nullable: false),
+                        HospitalAttendedId = c.Int(nullable: false),
+                        SocailWorkAttendanceId = c.Int(nullable: false),
+                        PoliceAttendanceId = c.Int(nullable: false),
+                        VictimServiceAttendanceId = c.Int(nullable: false),
+                        MedicalOnlyId = c.Int(nullable: false),
+                        EvidenceStoredId = c.Int(nullable: false),
+                        HivMedsId = c.Int(nullable: false),
+                        ReferredToCbvsId = c.Int(nullable: false),
+                        PoliceReportedId = c.Int(nullable: false),
+                        ThirdPartyReportId = c.Int(nullable: false),
+                        BadDateReportId = c.Int(nullable: false),
+                        NumberTransportsProvided = c.Int(nullable: false),
+                        ReferredToNursePracticioner = c.Boolean(nullable: false),
+                        SocialWorkAttendance_SocialWorkAttendanceId = c.Int(),
+                        VictimServicesAttendance_VictimServicesAttendanceId = c.Int(),
+                    })
+                .PrimaryKey(t => t.SmartId)
+                .ForeignKey("dbo.BadDateReports", t => t.BadDateReportId, cascadeDelete: true)
+                .ForeignKey("dbo.CityOfAssaults", t => t.CityOfAssaultId, cascadeDelete: true)
+                .ForeignKey("dbo.CityOfResidences", t => t.CityOfResidenceId, cascadeDelete: true)
+                .ForeignKey("dbo.Clients", t => t.ClientId, cascadeDelete: true)
+                .ForeignKey("dbo.DrugFacilitateds", t => t.DrugFacilitatedId, cascadeDelete: true)
+                .ForeignKey("dbo.EvidenceStoreds", t => t.EvidenceStoredId, cascadeDelete: true)
+                .ForeignKey("dbo.HivMeds", t => t.HivMedsId, cascadeDelete: true)
+                .ForeignKey("dbo.HospitalAttendeds", t => t.HospitalAttendedId, cascadeDelete: true)
+                .ForeignKey("dbo.MedicalOnlies", t => t.MedicalOnlyId, cascadeDelete: true)
+                .ForeignKey("dbo.MultiplePerps", t => t.MultiplePerpsId, cascadeDelete: true)
+                .ForeignKey("dbo.PoliceAttendances", t => t.PoliceAttendanceId, cascadeDelete: true)
+                .ForeignKey("dbo.PoliceReporteds", t => t.PoliceReportedId, cascadeDelete: true)
+                .ForeignKey("dbo.ReferredToCbvs", t => t.ReferredToCbvsId, cascadeDelete: true)
+                .ForeignKey("dbo.ReferringHospitals", t => t.ReferringHospitalId, cascadeDelete: true)
+                .ForeignKey("dbo.SexExploitations", t => t.SexExploitationId, cascadeDelete: true)
+                .ForeignKey("dbo.SocialWorkAttendances", t => t.SocialWorkAttendance_SocialWorkAttendanceId)
+                .ForeignKey("dbo.ThirdPartyReports", t => t.ThirdPartyReportId, cascadeDelete: true)
+                .ForeignKey("dbo.VictimServicesAttendances", t => t.VictimServicesAttendance_VictimServicesAttendanceId)
+                .Index(t => t.ClientId)
+                .Index(t => t.SexExploitationId)
+                .Index(t => t.MultiplePerpsId)
+                .Index(t => t.DrugFacilitatedId)
+                .Index(t => t.CityOfAssaultId)
+                .Index(t => t.CityOfResidenceId)
+                .Index(t => t.ReferringHospitalId)
+                .Index(t => t.HospitalAttendedId)
+                .Index(t => t.PoliceAttendanceId)
+                .Index(t => t.MedicalOnlyId)
+                .Index(t => t.EvidenceStoredId)
+                .Index(t => t.HivMedsId)
+                .Index(t => t.ReferredToCbvsId)
+                .Index(t => t.PoliceReportedId)
+                .Index(t => t.ThirdPartyReportId)
+                .Index(t => t.BadDateReportId)
+                .Index(t => t.SocialWorkAttendance_SocialWorkAttendanceId)
+                .Index(t => t.VictimServicesAttendance_VictimServicesAttendanceId);
+            
+            CreateTable(
+                "dbo.CityOfAssaults",
+                c => new
+                    {
+                        CityOfAssaultId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.CityOfAssaultId);
+            
+            CreateTable(
+                "dbo.CityOfResidences",
+                c => new
+                    {
+                        CityOfResidenceId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.CityOfResidenceId);
+            
+            CreateTable(
+                "dbo.DrugFacilitateds",
+                c => new
+                    {
+                        DrugFacilitatedId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.DrugFacilitatedId);
+            
+            CreateTable(
+                "dbo.EvidenceStoreds",
+                c => new
+                    {
+                        EvidenceStoredId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.EvidenceStoredId);
+            
+            CreateTable(
+                "dbo.HivMeds",
+                c => new
+                    {
+                        HivMedsId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.HivMedsId);
+            
+            CreateTable(
+                "dbo.HospitalAttendeds",
+                c => new
+                    {
+                        HospitalAttendedId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.HospitalAttendedId);
+            
+            CreateTable(
+                "dbo.MedicalOnlies",
+                c => new
+                    {
+                        MedicalOnlyId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.MedicalOnlyId);
+            
+            CreateTable(
+                "dbo.MultiplePerps",
+                c => new
+                    {
+                        MultiplePerpsId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.MultiplePerpsId);
+            
+            CreateTable(
+                "dbo.PoliceAttendances",
+                c => new
+                    {
+                        PoliceAttendanceId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.PoliceAttendanceId);
+            
+            CreateTable(
+                "dbo.PoliceReporteds",
+                c => new
+                    {
+                        PoliceReportedId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.PoliceReportedId);
+            
+            CreateTable(
+                "dbo.ReferredToCbvs",
+                c => new
+                    {
+                        ReferredToCbvsId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.ReferredToCbvsId);
+            
+            CreateTable(
+                "dbo.ReferringHospitals",
+                c => new
+                    {
+                        ReferringHospitalId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.ReferringHospitalId);
+            
+            CreateTable(
+                "dbo.SexExploitations",
+                c => new
+                    {
+                        SexExploitationId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.SexExploitationId);
+            
+            CreateTable(
+                "dbo.SocialWorkAttendances",
+                c => new
+                    {
+                        SocialWorkAttendanceId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.SocialWorkAttendanceId);
+            
+            CreateTable(
+                "dbo.ThirdPartyReports",
+                c => new
+                    {
+                        ThirdPartyReportId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.ThirdPartyReportId);
+            
+            CreateTable(
+                "dbo.VictimServicesAttendances",
+                c => new
+                    {
+                        VictimServicesAttendanceId = c.Int(nullable: false, identity: true),
+                        Value = c.String(),
+                    })
+                .PrimaryKey(t => t.VictimServicesAttendanceId);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Smarts", "VictimServicesAttendance_VictimServicesAttendanceId", "dbo.VictimServicesAttendances");
+            DropForeignKey("dbo.Smarts", "ThirdPartyReportId", "dbo.ThirdPartyReports");
+            DropForeignKey("dbo.Smarts", "SocialWorkAttendance_SocialWorkAttendanceId", "dbo.SocialWorkAttendances");
+            DropForeignKey("dbo.Smarts", "SexExploitationId", "dbo.SexExploitations");
+            DropForeignKey("dbo.Smarts", "ReferringHospitalId", "dbo.ReferringHospitals");
+            DropForeignKey("dbo.Smarts", "ReferredToCbvsId", "dbo.ReferredToCbvs");
+            DropForeignKey("dbo.Smarts", "PoliceReportedId", "dbo.PoliceReporteds");
+            DropForeignKey("dbo.Smarts", "PoliceAttendanceId", "dbo.PoliceAttendances");
+            DropForeignKey("dbo.Smarts", "MultiplePerpsId", "dbo.MultiplePerps");
+            DropForeignKey("dbo.Smarts", "MedicalOnlyId", "dbo.MedicalOnlies");
+            DropForeignKey("dbo.Smarts", "HospitalAttendedId", "dbo.HospitalAttendeds");
+            DropForeignKey("dbo.Smarts", "HivMedsId", "dbo.HivMeds");
+            DropForeignKey("dbo.Smarts", "EvidenceStoredId", "dbo.EvidenceStoreds");
+            DropForeignKey("dbo.Smarts", "DrugFacilitatedId", "dbo.DrugFacilitateds");
+            DropForeignKey("dbo.Smarts", "ClientId", "dbo.Clients");
+            DropForeignKey("dbo.Smarts", "CityOfResidenceId", "dbo.CityOfResidences");
+            DropForeignKey("dbo.Smarts", "CityOfAssaultId", "dbo.CityOfAssaults");
+            DropForeignKey("dbo.Smarts", "BadDateReportId", "dbo.BadDateReports");
             DropForeignKey("dbo.Clients", "VictimOfIncidentId", "dbo.VictimOfIncidents");
             DropForeignKey("dbo.Clients", "StatusOfFileId", "dbo.StatusOfFiles");
             DropForeignKey("dbo.Clients", "ServiceId", "dbo.Services");
@@ -267,6 +505,24 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropForeignKey("dbo.Clients", "AssignedWorkerId", "dbo.AssignedWorkers");
             DropForeignKey("dbo.Clients", "AgeId", "dbo.Ages");
             DropForeignKey("dbo.Clients", "AbuserRelationshipId", "dbo.AbuserRelationships");
+            DropIndex("dbo.Smarts", new[] { "VictimServicesAttendance_VictimServicesAttendanceId" });
+            DropIndex("dbo.Smarts", new[] { "SocialWorkAttendance_SocialWorkAttendanceId" });
+            DropIndex("dbo.Smarts", new[] { "BadDateReportId" });
+            DropIndex("dbo.Smarts", new[] { "ThirdPartyReportId" });
+            DropIndex("dbo.Smarts", new[] { "PoliceReportedId" });
+            DropIndex("dbo.Smarts", new[] { "ReferredToCbvsId" });
+            DropIndex("dbo.Smarts", new[] { "HivMedsId" });
+            DropIndex("dbo.Smarts", new[] { "EvidenceStoredId" });
+            DropIndex("dbo.Smarts", new[] { "MedicalOnlyId" });
+            DropIndex("dbo.Smarts", new[] { "PoliceAttendanceId" });
+            DropIndex("dbo.Smarts", new[] { "HospitalAttendedId" });
+            DropIndex("dbo.Smarts", new[] { "ReferringHospitalId" });
+            DropIndex("dbo.Smarts", new[] { "CityOfResidenceId" });
+            DropIndex("dbo.Smarts", new[] { "CityOfAssaultId" });
+            DropIndex("dbo.Smarts", new[] { "DrugFacilitatedId" });
+            DropIndex("dbo.Smarts", new[] { "MultiplePerpsId" });
+            DropIndex("dbo.Smarts", new[] { "SexExploitationId" });
+            DropIndex("dbo.Smarts", new[] { "ClientId" });
             DropIndex("dbo.Clients", new[] { "StatusOfFileId" });
             DropIndex("dbo.Clients", new[] { "DuplicateFileId" });
             DropIndex("dbo.Clients", new[] { "RepeatClientId" });
@@ -285,6 +541,24 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropIndex("dbo.Clients", new[] { "CrisisId" });
             DropIndex("dbo.Clients", new[] { "RiskLevelId" });
             DropIndex("dbo.Clients", new[] { "YearId" });
+            DropTable("dbo.VictimServicesAttendances");
+            DropTable("dbo.ThirdPartyReports");
+            DropTable("dbo.SocialWorkAttendances");
+            DropTable("dbo.SexExploitations");
+            DropTable("dbo.ReferringHospitals");
+            DropTable("dbo.ReferredToCbvs");
+            DropTable("dbo.PoliceReporteds");
+            DropTable("dbo.PoliceAttendances");
+            DropTable("dbo.MultiplePerps");
+            DropTable("dbo.MedicalOnlies");
+            DropTable("dbo.HospitalAttendeds");
+            DropTable("dbo.HivMeds");
+            DropTable("dbo.EvidenceStoreds");
+            DropTable("dbo.DrugFacilitateds");
+            DropTable("dbo.CityOfResidences");
+            DropTable("dbo.CityOfAssaults");
+            DropTable("dbo.Smarts");
+            DropTable("dbo.BadDateReports");
             DropTable("dbo.VictimOfIncidents");
             DropTable("dbo.StatusOfFiles");
             DropTable("dbo.Services");
