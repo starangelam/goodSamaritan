@@ -216,6 +216,24 @@
     <Compile Include="Models\Client\Year.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Smart\BadDateReport.cs" />
+    <Compile Include="Models\Smart\CityOfAssault.cs" />
+    <Compile Include="Models\Smart\CityOfResidence.cs" />
+    <Compile Include="Models\Smart\DrugFacilitated.cs" />
+    <Compile Include="Models\Smart\EvidenceStored.cs" />
+    <Compile Include="Models\Smart\HivMeds.cs" />
+    <Compile Include="Models\Smart\HospitalAttended.cs" />
+    <Compile Include="Models\Smart\MedicalOnly.cs" />
+    <Compile Include="Models\Smart\MultiplePerps.cs" />
+    <Compile Include="Models\Smart\PoliceAttendance.cs" />
+    <Compile Include="Models\Smart\PoliceReported.cs" />
+    <Compile Include="Models\Smart\ReferredToCbvs.cs" />
+    <Compile Include="Models\Smart\ReferringHospital.cs" />
+    <Compile Include="Models\Smart\SexExploitation.cs" />
+    <Compile Include="Models\Smart\Smart.cs" />
+    <Compile Include="Models\Smart\SocialWorkAttendance.cs" />
+    <Compile Include="Models\Smart\ThirdPartyReport.cs" />
+    <Compile Include="Models\Smart\VictimServicesAttendance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
