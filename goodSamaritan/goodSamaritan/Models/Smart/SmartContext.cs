@@ -13,7 +13,6 @@ namespace GoodSamaritan.Models.Smart
 
         public DbSet<Smart> Smarts{ get; set; }
 
-        public DbSet<Client> Clients { get; set; }
         public DbSet<SexExploitation> SexExploitations { get; set; }
         public DbSet<MultiplePerps> MultiplePerps { get; set; }
         public DbSet<DrugFacilitated> DrugsFacilitated { get; set; }
@@ -25,6 +24,7 @@ namespace GoodSamaritan.Models.Smart
         public DbSet<PoliceAttendance> PoliceAttendances { get; set; }
         public DbSet<VictimServicesAttendance> VictimServicesAttendances { get; set; }
         public DbSet<MedicalOnly> MedicalOnly { get; set; }
+        public DbSet<EvidenceStored> EvidenceStored{ get; set; }
         public DbSet<HivMeds> HivMeds { get; set; }
         public DbSet<ReferredToCbvs> ReferredToCbvs { get; set; }
         public DbSet<PoliceReported> PoliceReported { get; set; }

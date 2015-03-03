@@ -15,6 +15,7 @@ add-migration -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigration.
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigration.Configuration
 
+# -----------------------
 # Smart Migration commands
 
 enable-migrations -ContextTypeName SmartContext -MigrationsDirectory Migrations\SmartMigration
