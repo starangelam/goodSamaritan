@@ -29,6 +29,7 @@ namespace goodSamaritan.Models.Client
 
         public string PoliceFileNumber { get; set; }
 
+        // Should NOT be required (for some reason is)
         public int CourtFileNumber { get; set; }
 
         [Required]
@@ -50,7 +51,6 @@ namespace goodSamaritan.Models.Client
         public Service Service { get; set; }
         public int ServiceId { get; set; }
 
-        // From Lookup Tables
         [Required]
         public Program Program { get; set; }
         public int ProgramId { get; set; }
@@ -59,25 +59,20 @@ namespace goodSamaritan.Models.Client
         [MaxLength(64),MinLength(2)]
         public string AssessmentAssgndTo { get; set; }
 
-        // From Lookup Tables
         public RiskStatus RiskStatus { get; set; }
         public int RiskStatusId { get; set; }
 
-        // From Lookup Tables
         public AssignedWorker AssignedWorkder { get; set; }
         public int AssignedWorkerId { get; set; }
 
-        // From Lookup Tables
         [Required]
         public ReferralSource ReferralSource { get; set; }
         public int ReferralSourceId { get; set; }
 
-        // From Lookup Tables
         [Required]
         public ReferralContact ReferralContact { get; set; }
         public int ReferralContactId { get; set; }
 
-        // From Lookup Tables
         [Required]
         public Incident Incident { get; set; }
         public int IncidentId { get; set; }
