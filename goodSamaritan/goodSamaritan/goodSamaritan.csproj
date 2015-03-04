@@ -180,6 +180,7 @@
     <Compile Include="Controllers\StatusesOfFilesController.cs" />
     <Compile Include="Controllers\VictimsOfIncidentsController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -392,6 +393,9 @@
     <Content Include="Views\StatusesOfFiles\Details.cshtml" />
     <Content Include="Views\StatusesOfFiles\Edit.cshtml" />
     <Content Include="Views\StatusesOfFiles\Index.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
