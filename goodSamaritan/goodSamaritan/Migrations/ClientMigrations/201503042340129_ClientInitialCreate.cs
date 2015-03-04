@@ -280,8 +280,8 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         BadDateReportId = c.Int(nullable: false),
                         NumberTransportsProvided = c.Int(nullable: false),
                         ReferredToNursePracticioner = c.Boolean(nullable: false),
-                        SocialWorkAttendance_SocialWorkAttendanceId = c.Int(),
-                        VictimServicesAttendance_VictimServicesAttendanceId = c.Int(),
+                        SocialWorkAttendance_SocialWorkAttendanceId = c.Int(nullable: false),
+                        VictimServicesAttendance_VictimServicesAttendanceId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.SmartId)
                 .ForeignKey("dbo.BadDateReports", t => t.BadDateReportId, cascadeDelete: true)
@@ -299,9 +299,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 .ForeignKey("dbo.ReferredToCbvs", t => t.ReferredToCbvsId, cascadeDelete: true)
                 .ForeignKey("dbo.ReferringHospitals", t => t.ReferringHospitalId, cascadeDelete: true)
                 .ForeignKey("dbo.SexExploitations", t => t.SexExploitationId, cascadeDelete: true)
-                .ForeignKey("dbo.SocialWorkAttendances", t => t.SocialWorkAttendance_SocialWorkAttendanceId)
+                .ForeignKey("dbo.SocialWorkAttendances", t => t.SocialWorkAttendance_SocialWorkAttendanceId, cascadeDelete: true)
                 .ForeignKey("dbo.ThirdPartyReports", t => t.ThirdPartyReportId, cascadeDelete: true)
-                .ForeignKey("dbo.VictimServicesAttendances", t => t.VictimServicesAttendance_VictimServicesAttendanceId)
+                .ForeignKey("dbo.VictimServicesAttendances", t => t.VictimServicesAttendance_VictimServicesAttendanceId, cascadeDelete: true)
                 .Index(t => t.ClientId)
                 .Index(t => t.SexExploitationId)
                 .Index(t => t.MultiplePerpsId)
