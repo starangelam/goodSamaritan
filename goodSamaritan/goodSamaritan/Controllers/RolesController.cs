@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles="Aministrator")]
     public class RolesController : Controller
     {
         ApplicationDbContext ctx = new ApplicationDbContext();
