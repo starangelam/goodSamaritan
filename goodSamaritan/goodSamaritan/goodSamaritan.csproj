@@ -232,7 +232,6 @@
     <Compile Include="Models\Smart\ReferringHospital.cs" />
     <Compile Include="Models\Smart\SexExploitation.cs" />
     <Compile Include="Models\Smart\Smart.cs" />
-    <Compile Include="Models\Smart\SmartContext.cs" />
     <Compile Include="Models\Smart\SocialWorkAttendance.cs" />
     <Compile Include="Models\Smart\ThirdPartyReport.cs" />
     <Compile Include="Models\Smart\VictimServicesAttendance.cs" />
