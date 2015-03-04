@@ -10,6 +10,7 @@ using goodSamaritan.Models.Client;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class RiskLevelsController : Controller
     {
         private ClientContext db = new ClientContext();
