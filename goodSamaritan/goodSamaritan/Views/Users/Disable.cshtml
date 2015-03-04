@@ -1,0 +1,28 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityUser
+
+@{
+    ViewBag.Title = "Disable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h4>Are you sure you want to disable this user?</h4>
+
+<div>
+    <p>
+        <strong>Username Name</strong>: @Model.UserName
+    </p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Disable" class="btn btn-default" />
+        </div>
+    }
+
+    <hr />
+    @Html.ActionLink("Back to List", "Index")
+</div>
