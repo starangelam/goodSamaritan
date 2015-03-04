@@ -184,14 +184,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503031809548_ClientInitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503031809548_ClientInitialCreate.Designer.cs">
-      <DependentUpon>201503031809548_ClientInitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503042001321_ClientInitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503042001321_ClientInitialCreate.Designer.cs">
+      <DependentUpon>201503042001321_ClientInitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
-    <Compile Include="Migrations\IdentityMigration\201503030419585_InitialCreate.cs" />
-    <Compile Include="Migrations\IdentityMigration\201503030419585_InitialCreate.Designer.cs">
-      <DependentUpon>201503030419585_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
+    <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.Designer.cs">
+      <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\IdentityMigration\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -409,11 +409,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503031809548_ClientInitialCreate.resx">
-      <DependentUpon>201503031809548_ClientInitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503042001321_ClientInitialCreate.resx">
+      <DependentUpon>201503042001321_ClientInitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\IdentityMigration\201503030419585_InitialCreate.resx">
-      <DependentUpon>201503030419585_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
+      <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

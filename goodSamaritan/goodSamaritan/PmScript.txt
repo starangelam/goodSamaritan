@@ -14,12 +14,3 @@ enable-migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Mig
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigration.Configuration "InitialCreate"
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.IdentityMigration.Configuration
-
-# -----------------------
-# Smart Migration commands
-
-enable-migrations -ContextTypeName SmartContext -MigrationsDirectory Migrations\SmartMigration
-
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.SmartMigration.Configuration "SmartInitialCreate"
-
-update-database -ConfigurationTypeName GoodSamaritan.Migrations.SmartMigration.Configuration
