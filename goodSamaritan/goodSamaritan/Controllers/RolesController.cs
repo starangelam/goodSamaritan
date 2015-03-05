@@ -182,12 +182,12 @@ namespace GoodSamaritan.Controllers
             if (UserManager.IsInRole(userId, role.Name))
             {
                 UserManager.RemoveFromRole(userId, role.Name);
-                ViewBag.SuccessMsg = String.Format("Role \"{0}\" removed from this user successfully!", 
+                ViewBag.SuccessMsg = String.Format("Role \"{0}\" removed from this user successfully!",
                     role.Name);
             }
             else
             {
-                ViewBag.ErrorMsg = String.Format("This user doesn't belong to selected role \"{0}\".", 
+                ViewBag.ErrorMsg = String.Format("This user doesn't belong to selected role \"{0}\".",
                     role.Name);
             }
 
@@ -224,7 +224,6 @@ namespace GoodSamaritan.Controllers
 
             if (User.Identity.Name != user.UserName)
             {
-                //UserManager.RemovePassword(id);
                 if (!UserManager.IsLockedOut(id))
                 {
                     UserManager.SetLockoutEnabled(id, true);
@@ -240,6 +239,38 @@ namespace GoodSamaritan.Controllers
             else
             {
                 ViewBag.ErrorMsg = "You cannot disable yourself!";
+            }
+
+            ViewBag.Users = from u in ctx.Users
+                            orderby u.UserName
+                            select new SelectListItem { Value = u.Id, Text = u.UserName };
+
+            return View("Disable");
+        }
+
+        [HttpPost, ActionName("Enable")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnableUser(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var user = ctx.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (UserManager.IsLockedOut(id))
+            {
+                UserManager.SetLockoutEnabled(id, false);
+                UserManager.Update(user);
+                ViewBag.SuccessMsg = String.Format("User \"{0}\" enabled successfully!", user.UserName);
+            }
+            else
+            {
+                ViewBag.ErrorMsg = String.Format("User \"{0}\" is enabled!", user.UserName);
             }
 
             ViewBag.Users = from u in ctx.Users

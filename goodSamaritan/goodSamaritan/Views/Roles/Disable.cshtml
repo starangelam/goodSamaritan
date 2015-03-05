@@ -3,24 +3,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Disable User</h2>
+<h2>User</h2>
 <div class="spacer"></div>
 @Html.Partial("_AlertMsgPartial")
 
 @using (Html.BeginForm("Disable", "Roles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <fieldset>
+        <legend>Diable User</legend>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.Label("id", "UserName", new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.DropDownList("id", (IEnumerable<SelectListItem>)ViewBag.Users, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.Label("id", "UserName", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("id", (IEnumerable<SelectListItem>)ViewBag.Users, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-10 col-lg-offset-2">
-            <input type="submit" value="Disable" class="btn btn-default" />
+        <div class="form-group">
+            <div class="col-md-10 col-lg-offset-2">
+                <input type="submit" value="Disable" class="btn btn-default" />
+            </div>
         </div>
-    </div>
+    </fieldset>
+}
+
+@using (Html.BeginForm("Enable", "Roles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <fieldset>
+        <legend>Enable User</legend>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.Label("id", "UserName", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("id", (IEnumerable<SelectListItem>)ViewBag.Users, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-lg-offset-2">
+                <input type="submit" value="Enable" class="btn btn-default" />
+            </div>
+        </div>
+    </fieldset>
 }
