@@ -9,7 +9,7 @@
         if (User.IsInRole("Administrator") || User.IsInRole("Worker"))
         {
             <li>@Html.ActionLink("Clients", "Index", "Clients")</li>
-            <li>@Html.ActionLink("SMART", "Index", "Smarts")</li>
+            <li>@Html.ActionLink("SMARTs", "Index", "Smarts")</li>
         }
 
         if (User.IsInRole("Administrator"))

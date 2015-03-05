@@ -27,6 +27,7 @@ namespace goodSamaritan.Models.Client
         [Required]
         public string FirstName { get; set; }
 
+        [MaxLength(24)]
         public string PoliceFileNumber { get; set; }
 
         // Should NOT be required (for some reason is)

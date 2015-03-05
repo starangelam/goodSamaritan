@@ -177,7 +177,7 @@
     <Compile Include="Controllers\RiskLevelsController.cs" />
     <Compile Include="Controllers\RiskStatusController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
-    <Compile Include="Controllers\Smarts\SmartsController.cs" />
+    <Compile Include="Controllers\SmartsController.cs" />
     <Compile Include="Controllers\StatusesOfFilesController.cs" />
     <Compile Include="Controllers\VictimsOfIncidentsController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
@@ -185,14 +185,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503042340129_ClientInitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503042340129_ClientInitialCreate.Designer.cs">
-      <DependentUpon>201503042340129_ClientInitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503050220587_ClientInitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503050220587_ClientInitialCreate.Designer.cs">
+      <DependentUpon>201503050220587_ClientInitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.Designer.cs">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityMigration\201503050205447_InitialCreate1.cs" />
+    <Compile Include="Migrations\IdentityMigration\201503050205447_InitialCreate1.Designer.cs">
+      <DependentUpon>201503050205447_InitialCreate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\IdentityMigration\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -414,11 +418,14 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503042340129_ClientInitialCreate.resx">
-      <DependentUpon>201503042340129_ClientInitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503050220587_ClientInitialCreate.resx">
+      <DependentUpon>201503050220587_ClientInitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityMigration\201503050205447_InitialCreate1.resx">
+      <DependentUpon>201503050205447_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -26,7 +26,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         Day = c.Int(nullable: false),
                         Surname = c.String(nullable: false),
                         FirstName = c.String(nullable: false),
-                        PoliceFileNumber = c.String(),
+                        PoliceFileNumber = c.String(maxLength: 24),
                         CourtFileNumber = c.Int(nullable: false),
                         SWCFileNumber = c.Int(nullable: false),
                         RiskLevelId = c.Int(nullable: false),
@@ -268,7 +268,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         AccompanimentMinutes = c.Int(nullable: false),
                         ReferringHospitalId = c.Int(nullable: false),
                         HospitalAttendedId = c.Int(nullable: false),
-                        SocailWorkAttendanceId = c.Int(nullable: false),
+                        SocialWorkAttendanceId = c.Int(nullable: false),
                         PoliceAttendanceId = c.Int(nullable: false),
                         VictimServiceAttendanceId = c.Int(nullable: false),
                         MedicalOnlyId = c.Int(nullable: false),
@@ -280,8 +280,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         BadDateReportId = c.Int(nullable: false),
                         NumberTransportsProvided = c.Int(nullable: false),
                         ReferredToNursePracticioner = c.Boolean(nullable: false),
-                        SocialWorkAttendance_SocialWorkAttendanceId = c.Int(nullable: false),
-                        VictimServicesAttendance_VictimServicesAttendanceId = c.Int(nullable: false),
+                        VictimServicesAttendance_VictimServicesAttendanceId = c.Int(),
                     })
                 .PrimaryKey(t => t.SmartId)
                 .ForeignKey("dbo.BadDateReports", t => t.BadDateReportId, cascadeDelete: true)
@@ -299,9 +298,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 .ForeignKey("dbo.ReferredToCbvs", t => t.ReferredToCbvsId, cascadeDelete: true)
                 .ForeignKey("dbo.ReferringHospitals", t => t.ReferringHospitalId, cascadeDelete: true)
                 .ForeignKey("dbo.SexExploitations", t => t.SexExploitationId, cascadeDelete: true)
-                .ForeignKey("dbo.SocialWorkAttendances", t => t.SocialWorkAttendance_SocialWorkAttendanceId, cascadeDelete: true)
+                .ForeignKey("dbo.SocialWorkAttendances", t => t.SocialWorkAttendanceId, cascadeDelete: true)
                 .ForeignKey("dbo.ThirdPartyReports", t => t.ThirdPartyReportId, cascadeDelete: true)
-                .ForeignKey("dbo.VictimServicesAttendances", t => t.VictimServicesAttendance_VictimServicesAttendanceId, cascadeDelete: true)
+                .ForeignKey("dbo.VictimServicesAttendances", t => t.VictimServicesAttendance_VictimServicesAttendanceId)
                 .Index(t => t.ClientId)
                 .Index(t => t.SexExploitationId)
                 .Index(t => t.MultiplePerpsId)
@@ -310,6 +309,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 .Index(t => t.CityOfResidenceId)
                 .Index(t => t.ReferringHospitalId)
                 .Index(t => t.HospitalAttendedId)
+                .Index(t => t.SocialWorkAttendanceId)
                 .Index(t => t.PoliceAttendanceId)
                 .Index(t => t.MedicalOnlyId)
                 .Index(t => t.EvidenceStoredId)
@@ -318,7 +318,6 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 .Index(t => t.PoliceReportedId)
                 .Index(t => t.ThirdPartyReportId)
                 .Index(t => t.BadDateReportId)
-                .Index(t => t.SocialWorkAttendance_SocialWorkAttendanceId)
                 .Index(t => t.VictimServicesAttendance_VictimServicesAttendanceId);
             
             CreateTable(
@@ -471,7 +470,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
         {
             DropForeignKey("dbo.Smarts", "VictimServicesAttendance_VictimServicesAttendanceId", "dbo.VictimServicesAttendances");
             DropForeignKey("dbo.Smarts", "ThirdPartyReportId", "dbo.ThirdPartyReports");
-            DropForeignKey("dbo.Smarts", "SocialWorkAttendance_SocialWorkAttendanceId", "dbo.SocialWorkAttendances");
+            DropForeignKey("dbo.Smarts", "SocialWorkAttendanceId", "dbo.SocialWorkAttendances");
             DropForeignKey("dbo.Smarts", "SexExploitationId", "dbo.SexExploitations");
             DropForeignKey("dbo.Smarts", "ReferringHospitalId", "dbo.ReferringHospitals");
             DropForeignKey("dbo.Smarts", "ReferredToCbvsId", "dbo.ReferredToCbvs");
@@ -506,7 +505,6 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropForeignKey("dbo.Clients", "AgeId", "dbo.Ages");
             DropForeignKey("dbo.Clients", "AbuserRelationshipId", "dbo.AbuserRelationships");
             DropIndex("dbo.Smarts", new[] { "VictimServicesAttendance_VictimServicesAttendanceId" });
-            DropIndex("dbo.Smarts", new[] { "SocialWorkAttendance_SocialWorkAttendanceId" });
             DropIndex("dbo.Smarts", new[] { "BadDateReportId" });
             DropIndex("dbo.Smarts", new[] { "ThirdPartyReportId" });
             DropIndex("dbo.Smarts", new[] { "PoliceReportedId" });
@@ -515,6 +513,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             DropIndex("dbo.Smarts", new[] { "EvidenceStoredId" });
             DropIndex("dbo.Smarts", new[] { "MedicalOnlyId" });
             DropIndex("dbo.Smarts", new[] { "PoliceAttendanceId" });
+            DropIndex("dbo.Smarts", new[] { "SocialWorkAttendanceId" });
             DropIndex("dbo.Smarts", new[] { "HospitalAttendedId" });
             DropIndex("dbo.Smarts", new[] { "ReferringHospitalId" });
             DropIndex("dbo.Smarts", new[] { "CityOfResidenceId" });

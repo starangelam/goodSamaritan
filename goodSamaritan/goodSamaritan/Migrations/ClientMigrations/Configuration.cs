@@ -531,6 +531,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new SexExploitation { Value = "No" },
                 new SexExploitation { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.MultiplePerps.AddOrUpdate(
                 m => m.Value,
@@ -538,6 +539,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new MultiplePerps { Value = "No" },
                 new MultiplePerps { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.DrugsFacilitated.AddOrUpdate(
                 m => m.Value,
@@ -545,6 +547,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new DrugFacilitated { Value = "No" },
                 new DrugFacilitated { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.CitiesOfAssault.AddOrUpdate(
                 c => c.Value,
@@ -572,6 +575,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new CityOfAssault { Value = "Out-of-Province" },
                 new CityOfAssault { Value = "International" }
                 );
+            context.SaveChanges();
 
             context.CitiesOfResidence.AddOrUpdate(
                 c => c.Value,
@@ -599,6 +603,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new CityOfResidence { Value = "Out-of-Province" },
                 new CityOfResidence { Value = "International" }
                 );
+            context.SaveChanges();
 
             context.ReferringHospitals.AddOrUpdate(
                 r => r.Value,
@@ -615,6 +620,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new ReferringHospital { Value = "Ridge Meadows Hospital" },
                 new ReferringHospital { Value = "Royal Columbia Hospital" }
                 );
+            context.SaveChanges();
 
             context.HospitalsAttended.AddOrUpdate(
                 h => h.Value,
@@ -631,6 +637,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new HospitalAttended { Value = "Ridge Meadows Hospital" },
                 new HospitalAttended { Value = "Royal Columbia Hospital" }
                 );
+            context.SaveChanges();
 
             context.SocialWorkAttendances.AddOrUpdate(
                 a => a.Value,
@@ -638,6 +645,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new SocialWorkAttendance { Value = "No" },
                 new SocialWorkAttendance { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.PoliceAttendances.AddOrUpdate(
                 a => a.Value,
@@ -645,6 +653,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new PoliceAttendance { Value = "No" },
                 new PoliceAttendance { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.VictimServicesAttendances.AddOrUpdate(
                 a => a.Value,
@@ -652,6 +661,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new VictimServicesAttendance { Value = "No" },
                 new VictimServicesAttendance { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.MedicalOnly.AddOrUpdate(
                 m => m.Value,
@@ -659,42 +669,88 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 new MedicalOnly { Value = "No" },
                 new MedicalOnly { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.EvidenceStored.AddOrUpdate(
+                c => c.EvidenceStoredId,
                 new EvidenceStored { Value = "Yes" },
                 new EvidenceStored { Value = "No" },
                 new EvidenceStored { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.HivMeds.AddOrUpdate(
+                c => c.HivMedsId,
                 new HivMeds { Value = "Yes" },
                 new HivMeds { Value = "No" },
                 new HivMeds { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.ReferredToCbvs.AddOrUpdate(
+                c => c.ReferredToCbvsId,
                 new ReferredToCbvs { Value = "Yes" },
                 new ReferredToCbvs { Value = "No" },
                 new ReferredToCbvs { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.PoliceReported.AddOrUpdate(
+                c => c.PoliceReportedId,
                 new PoliceReported { Value = "Yes" },
                 new PoliceReported { Value = "No" },
                 new PoliceReported { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.ThirdPartyReports.AddOrUpdate(
+                c => c.ThirdPartyReportId,
                 new ThirdPartyReport { Value = "Yes" },
                 new ThirdPartyReport { Value = "No" },
                 new ThirdPartyReport { Value = "N/A" }
                 );
+            context.SaveChanges();
 
             context.BadDateReports.AddOrUpdate(
+                c => c.BadDateReportId,
                 new BadDateReport { Value = "Yes" },
                 new BadDateReport { Value = "No" },
                 new BadDateReport { Value = "N/A" }
                 );
+            context.SaveChanges();
+
+            context.Smarts.AddOrUpdate(
+                c => new { c.NumberTransportsProvided },
+                new Smart
+                {
+                    SmartId = 1,
+                    ClientId = (context.Clients.Where(c => c.ClientId == 1).FirstOrDefault().ClientId),
+                    SexExploitationId = (context.SexExploitations.Where(c => c.Value == "Yes").FirstOrDefault().SexExploitationId),
+                    MultiplePerpsId = (context.MultiplePerps.Where(c => c.Value == "Yes").FirstOrDefault().MultiplePerpsId),
+                    DrugFacilitatedId = (context.DrugsFacilitated.Where(c => c.Value == "Yes").FirstOrDefault().DrugFacilitatedId),
+                    CityOfAssaultId = (context.CitiesOfAssault.Where(c => c.Value == "Burnaby").FirstOrDefault().CityOfAssaultId),
+                    CityOfResidenceId = (context.CitiesOfResidence.Where(c => c.Value == "Burnaby").FirstOrDefault().CityOfResidenceId),
+
+                    AccompanimentMinutes = 5,
+
+                    ReferringHospitalId = (context.ReferringHospitals.Where(c => c.Value == "Burnaby Hospital").FirstOrDefault().ReferringHospitalId),
+
+                    HospitalAttendedId = (context.HospitalsAttended.Where(c => c.Value == "Burnaby Hospital").FirstOrDefault().HospitalAttendedId),
+                    SocialWorkAttendanceId = (context.SocialWorkAttendances.Where(c => c.Value == "Yes").FirstOrDefault().SocialWorkAttendanceId),
+                    PoliceAttendanceId = (context.PoliceAttendances.Where(c => c.Value == "Yes").FirstOrDefault().PoliceAttendanceId),
+                    VictimServiceAttendanceId = (context.VictimServicesAttendances.Where(c => c.Value == "Yes").FirstOrDefault().VictimServicesAttendanceId),
+                    MedicalOnlyId = (context.MedicalOnly.Where(c => c.Value == "Yes").FirstOrDefault().MedicalOnlyId),
+                    EvidenceStoredId = (context.EvidenceStored.Where(c => c.Value == "Yes").FirstOrDefault().EvidenceStoredId),
+                    HivMedsId = (context.HivMeds.Where(c => c.Value == "Yes").FirstOrDefault().HivMedsId),
+                    ReferredToCbvsId = (context.ReferredToCbvs.Where(c => c.Value == "Yes").FirstOrDefault().ReferredToCbvsId),
+                    PoliceReportedId = (context.PoliceReported.Where(c => c.Value == "Yes").FirstOrDefault().PoliceReportedId),
+                    ThirdPartyReportId = (context.ThirdPartyReports.Where(c => c.Value == "Yes").FirstOrDefault().ThirdPartyReportId),
+                    BadDateReportId = (context.BadDateReports.Where(c => c.Value == "Yes").FirstOrDefault().BadDateReportId),
+
+                    NumberTransportsProvided = 2,
+                    ReferredToNursePracticioner = true
+                });
+            context.SaveChanges();
         }
     }
 }
