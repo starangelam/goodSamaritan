@@ -224,8 +224,18 @@ namespace GoodSamaritan.Controllers
 
             if (User.Identity.Name != user.UserName)
             {
-                UserManager.RemovePassword(id);
-                ViewBag.SuccessMsg = String.Format("User \"{0}\" disabled successfully!", user.UserName);
+                //UserManager.RemovePassword(id);
+                if (!UserManager.IsLockedOut(id))
+                {
+                    UserManager.SetLockoutEnabled(id, true);
+                    UserManager.SetLockoutEndDate(id, DateTime.UtcNow.AddYears(100));
+                    UserManager.Update(user);
+                    ViewBag.SuccessMsg = String.Format("User \"{0}\" disabled successfully!", user.UserName);
+                }
+                else
+                {
+                    ViewBag.ErrorMsg = String.Format("User \"{0}\" already disabled!", user.UserName);
+                }
             }
             else
             {
