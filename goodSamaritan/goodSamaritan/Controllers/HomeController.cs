@@ -26,5 +26,11 @@ namespace GoodSamaritan.Controllers
 
             return View();
         }
+
+        [Authorize(Roles = "Administrator")]
+        public ActionResult LookupTables()
+        {
+            return View();
+        }
     }
 }

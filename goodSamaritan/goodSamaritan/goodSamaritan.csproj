@@ -413,6 +413,7 @@
     <Content Include="Views\Roles\ShowUserRoles.cshtml" />
     <Content Include="Views\Roles\Disable.cshtml" />
     <Content Include="Views\Shared\_AlertMsgPartial.cshtml" />
+    <Content Include="Views\Home\LookupTables.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
