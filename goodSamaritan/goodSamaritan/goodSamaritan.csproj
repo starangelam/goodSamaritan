@@ -179,7 +179,6 @@
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SmartsController.cs" />
     <Compile Include="Controllers\StatusesOfFilesController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VictimsOfIncidentsController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -412,6 +411,8 @@
     <Content Include="Views\Users\ManageRoles.cshtml" />
     <Content Include="Views\Roles\ManageUserRoles.cshtml" />
     <Content Include="Views\Roles\ShowUserRoles.cshtml" />
+    <Content Include="Views\Roles\Disable.cshtml" />
+    <Content Include="Views\Shared\_AlertMsgPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

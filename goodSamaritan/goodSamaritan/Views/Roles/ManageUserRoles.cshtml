@@ -5,6 +5,7 @@
 
 <h2>Manage User Roles</h2>
 <div class="spacer"></div>
+
 @using (Html.BeginForm("ShowUserRoles", "Roles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     <fieldset>
@@ -80,3 +81,5 @@
         </div>
     </fieldset>
 }
+
+@Html.ActionLink("Back to role list", "Index")

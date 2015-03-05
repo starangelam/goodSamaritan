@@ -5,24 +5,7 @@
 
 <h2>Roles for @ViewBag.UserName</h2>
 <div class="spacer"></div>
-
-@if (ViewBag.ErrorMsg != null || ViewBag.SuccessMsg != null)
-{
-    if (ViewBag.ErrorMsg != null)
-    {
-        <div class="alert alert-dismissible alert-danger">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <p>@ViewBag.ErrorMsg</p>
-        </div>
-    }
-    else
-    {
-        <div class="alert alert-dismissible alert-success">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <p>@ViewBag.SuccessMsg</p>
-        </div>
-    }
-}
+@Html.Partial("_AlertMsgPartial")
 
 <ul>
     @foreach (var role in ViewBag.Roles)

@@ -196,5 +196,47 @@ namespace GoodSamaritan.Controllers
 
             return View("ShowUserRoles");
         }
+
+        // GET: DisableUser
+        [ActionName("Disable")]
+        public ActionResult DisableUser()
+        {
+            ViewBag.Users = from u in ctx.Users
+                            orderby u.UserName
+                            select new SelectListItem { Value = u.Id, Text = u.UserName };
+
+            return View();
+        }
+
+        [HttpPost, ActionName("Disable")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DisableUser(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var user = ctx.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (User.Identity.Name != user.UserName)
+            {
+                UserManager.RemovePassword(id);
+                ViewBag.SuccessMsg = String.Format("User \"{0}\" disabled successfully!", user.UserName);
+            }
+            else
+            {
+                ViewBag.ErrorMsg = "You cannot disable yourself!";
+            }
+
+            ViewBag.Users = from u in ctx.Users
+                            orderby u.UserName
+                            select new SelectListItem { Value = u.Id, Text = u.UserName };
+
+            return View("Disable");
+        }
     }
 }
