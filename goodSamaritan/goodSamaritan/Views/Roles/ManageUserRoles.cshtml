@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "ManageUserRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage User Roles</h2>
+<div class="spacer"></div>
+@using (Html.BeginForm("ShowUserRoles", "Roles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <fieldset>
+        <legend>Display Roles for User</legend>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.Label("userId", "UserName", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("userId", (IEnumerable<SelectListItem>)ViewBag.Users, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-lg-offset-2">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+
+</fieldset>
+}
+
+@using (Html.BeginForm("AddUserToRole", "Roles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <fieldset>
+        <legend>Add User to Role</legend>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.Label("userId", "UserName", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("userId", (IEnumerable<SelectListItem>)ViewBag.Users, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("roleId", "Role Name", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("roleId", (IEnumerable<SelectListItem>)ViewBag.Roles, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-lg-offset-2">
+                <input type="submit" value="Add" class="btn btn-default" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+@using (Html.BeginForm("RemoveUserFromRole", "Roles", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <fieldset>
+        <legend>Remove User from Role</legend>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.Label("userId", "UserName", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("userId", (IEnumerable<SelectListItem>)ViewBag.Users, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("roleId", "Role Name", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownList("roleId", (IEnumerable<SelectListItem>)ViewBag.Roles, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-lg-offset-2">
+                <input type="submit" value="Remove" class="btn btn-default" />
+            </div>
+        </div>
+    </fieldset>
+}

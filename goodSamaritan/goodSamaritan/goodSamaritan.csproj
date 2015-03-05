@@ -409,6 +409,9 @@
     <Content Include="Views\Smarts\Index.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Disable.cshtml" />
+    <Content Include="Views\Users\ManageRoles.cshtml" />
+    <Content Include="Views\Roles\ManageUserRoles.cshtml" />
+    <Content Include="Views\Roles\ShowUserRoles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
