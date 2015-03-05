@@ -181,9 +181,18 @@ namespace GoodSamaritan.Controllers
 
             if (UserManager.IsInRole(userId, role.Name))
             {
-                UserManager.RemoveFromRole(userId, role.Name);
-                ViewBag.SuccessMsg = String.Format("Role \"{0}\" removed from this user successfully!",
-                    role.Name);
+                if (User.Identity.Name == user.UserName && role.Name == "Administrator")
+                {
+                    ViewBag.ErrorMsg = String.Format("You cannot remove \"{0}\" role from yourself!",
+                        role.Name);
+                }
+                else
+                {
+                    UserManager.RemoveFromRole(userId, role.Name);
+                    ViewBag.SuccessMsg = String.Format("Role \"{0}\" removed from this user successfully!",
+                        role.Name);
+                }
+
             }
             else
             {
