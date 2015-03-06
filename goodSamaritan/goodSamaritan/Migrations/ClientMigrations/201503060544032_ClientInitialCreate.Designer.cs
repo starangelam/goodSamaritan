@@ -7,13 +7,13 @@ namespace GoodSamaritan.Migrations.ClientMigrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class SmartValidateLookup : IMigrationMetadata
+    public sealed partial class ClientInitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SmartValidateLookup));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ClientInitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201503060412002_SmartValidateLookup"; }
+            get { return "201503060544032_ClientInitialCreate"; }
         }
         
         string IMigrationMetadata.Source
