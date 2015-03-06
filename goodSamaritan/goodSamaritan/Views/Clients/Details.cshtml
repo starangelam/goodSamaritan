@@ -11,9 +11,43 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FiscalYear.Range)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FiscalYear.Range)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Month)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.AbuserRelationship.Relationship)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.AbuserRelationship.Relationship)
         </dd>
@@ -64,14 +98,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.FamilyViolenceFile.Exists)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FiscalYear.Range)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FiscalYear.Range)
         </dd>
 
         <dt>
@@ -155,38 +181,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Month)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Month)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Day)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Day)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Surname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Surname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.PoliceFileNumber)
         </dt>
 
@@ -265,7 +259,6 @@
         <dd>
             @Html.DisplayFor(model => model.DateReOpened)
         </dd>
-
     </dl>
 </div>
 <p>
