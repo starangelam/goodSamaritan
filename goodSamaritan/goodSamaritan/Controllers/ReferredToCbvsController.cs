@@ -12,6 +12,7 @@ using goodSamaritan.Models.Client;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ReferredToCbvsController : Controller
     {
         private ClientContext db = new ClientContext();
