@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,8 +8,13 @@ namespace GoodSamaritan.Models.Smart
 {
     public class BadDateReport
     {
+        [Required]
         public int BadDateReportId { get; set; }
-        public string Value { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        [Display(Name = "Is Bad Date Reported")]
+        public string IsBadDateReported { get; set; }
         public ICollection<Smart> Smarts { get; set; }
     }
 }

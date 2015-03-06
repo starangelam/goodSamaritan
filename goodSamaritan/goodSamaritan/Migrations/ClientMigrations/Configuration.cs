@@ -778,9 +778,9 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
             ctx.BadDateReports.AddOrUpdate(
                 c => c.BadDateReportId,
-                new BadDateReport { Value = "Yes" },
-                new BadDateReport { Value = "No" },
-                new BadDateReport { Value = "N/A" }
+                new BadDateReport { IsBadDateReported = "Yes" },
+                new BadDateReport { IsBadDateReported = "No" },
+                new BadDateReport { IsBadDateReported = "N/A" }
                 );
             ctx.SaveChanges();
         }
@@ -813,7 +813,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     ReferredToCbvsId = (ctx.ReferredToCbvs.Where(c => c.Value == "Yes").FirstOrDefault().ReferredToCbvsId),
                     PoliceReportedId = (ctx.PoliceReported.Where(c => c.Value == "Yes").FirstOrDefault().PoliceReportedId),
                     ThirdPartyReportId = (ctx.ThirdPartyReports.Where(c => c.Value == "Yes").FirstOrDefault().ThirdPartyReportId),
-                    BadDateReportId = (ctx.BadDateReports.Where(c => c.Value == "Yes").FirstOrDefault().BadDateReportId),
+                    BadDateReportId = (ctx.BadDateReports.Where(c => c.IsBadDateReported == "Yes").FirstOrDefault().BadDateReportId),
 
                     NumberTransportsProvided = 2,
                     ReferredToNursePracticioner = true

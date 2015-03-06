@@ -19,7 +19,24 @@ namespace GoodSamaritan.Controllers
         // GET: Smarts
         public async Task<ActionResult> Index()
         {
-            var smarts = db.Smarts.Include(s => s.BadDateReport).Include(s => s.CityOfAssault).Include(s => s.CityOfResidence).Include(s => s.Client).Include(s => s.DrugFacilitated).Include(s => s.EvidenceStored).Include(s => s.HivMeds).Include(s => s.HospitalAttended).Include(s => s.MedicalOnly).Include(s => s.MultiplePerps).Include(s => s.PoliceAttendance).Include(s => s.PoliceReported).Include(s => s.ReferredToCbvs).Include(s => s.ReferringHospital).Include(s => s.SexExploitation).Include(s => s.SocialWorkAttendance).Include(s => s.ThirdPartyReport);
+            var smarts = db.Smarts
+                .Include(s => s.BadDateReport)
+                .Include(s => s.CityOfAssault)
+                .Include(s => s.CityOfResidence)
+                .Include(s => s.Client)
+                .Include(s => s.DrugFacilitated)
+                .Include(s => s.EvidenceStored)
+                .Include(s => s.HivMeds)
+                .Include(s => s.HospitalAttended)
+                .Include(s => s.MedicalOnly)
+                .Include(s => s.MultiplePerps)
+                .Include(s => s.PoliceAttendance)
+                .Include(s => s.PoliceReported)
+                .Include(s => s.ReferredToCbvs)
+                .Include(s => s.ReferringHospital)
+                .Include(s => s.SexExploitation)
+                .Include(s => s.SocialWorkAttendance)
+                .Include(s => s.ThirdPartyReport);
             return View(await smarts.ToListAsync());
         }
 
@@ -41,7 +58,7 @@ namespace GoodSamaritan.Controllers
         // GET: Smarts/Create
         public ActionResult Create()
         {
-            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "Value");
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "IsBadDateReported");
             ViewBag.CityOfAssaultId = new SelectList(db.CitiesOfAssault, "CityOfAssaultId", "Value");
             ViewBag.CityOfResidenceId = new SelectList(db.CitiesOfResidence, "CityOfResidenceId", "Value");
             ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Surname");
@@ -75,7 +92,7 @@ namespace GoodSamaritan.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "Value", smart.BadDateReportId);
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "IsBadDateReported", smart.BadDateReportId);
             ViewBag.CityOfAssaultId = new SelectList(db.CitiesOfAssault, "CityOfAssaultId", "Value", smart.CityOfAssaultId);
             ViewBag.CityOfResidenceId = new SelectList(db.CitiesOfResidence, "CityOfResidenceId", "Value", smart.CityOfResidenceId);
             ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Surname", smart.ClientId);
@@ -107,7 +124,7 @@ namespace GoodSamaritan.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "Value", smart.BadDateReportId);
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "IsBadDateReported", smart.BadDateReportId);
             ViewBag.CityOfAssaultId = new SelectList(db.CitiesOfAssault, "CityOfAssaultId", "Value", smart.CityOfAssaultId);
             ViewBag.CityOfResidenceId = new SelectList(db.CitiesOfResidence, "CityOfResidenceId", "Value", smart.CityOfResidenceId);
             ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Surname", smart.ClientId);
@@ -140,7 +157,7 @@ namespace GoodSamaritan.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "Value", smart.BadDateReportId);
+            ViewBag.BadDateReportId = new SelectList(db.BadDateReports, "BadDateReportId", "IsBadDateReported", smart.BadDateReportId);
             ViewBag.CityOfAssaultId = new SelectList(db.CitiesOfAssault, "CityOfAssaultId", "Value", smart.CityOfAssaultId);
             ViewBag.CityOfResidenceId = new SelectList(db.CitiesOfResidence, "CityOfResidenceId", "Value", smart.CityOfResidenceId);
             ViewBag.ClientId = new SelectList(db.Clients, "ClientId", "Surname", smart.ClientId);
