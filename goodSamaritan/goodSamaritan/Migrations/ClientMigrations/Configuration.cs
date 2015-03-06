@@ -42,232 +42,8 @@ namespace GoodSamaritan.Migrations.ClientMigrations
             seedClients(ctx);
 
             // SMART infromation seed
-            ctx.SexExploitations.AddOrUpdate(
-                s => s.Value,
-                new SexExploitation { Value = "Yes" },
-                new SexExploitation { Value = "No" },
-                new SexExploitation { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.MultiplePerps.AddOrUpdate(
-                m => m.Value,
-                new MultiplePerps { Value = "Yes" },
-                new MultiplePerps { Value = "No" },
-                new MultiplePerps { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.DrugsFacilitated.AddOrUpdate(
-                m => m.Value,
-                new DrugFacilitated { Value = "Yes" },
-                new DrugFacilitated { Value = "No" },
-                new DrugFacilitated { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.CitiesOfAssault.AddOrUpdate(
-                c => c.Value,
-                new CityOfAssault { Value = "Surrey" },
-                new CityOfAssault { Value = "Abbotsford" },
-                new CityOfAssault { Value = "Agassiz" },
-                new CityOfAssault { Value = "Boston Bar" },
-                new CityOfAssault { Value = "Burnaby" },
-                new CityOfAssault { Value = "Chilliwack" },
-                new CityOfAssault { Value = "Coquitlam" },
-                new CityOfAssault { Value = "Delta" },
-                new CityOfAssault { Value = "Harrison Hot Springs" },
-                new CityOfAssault { Value = "Hope" },
-                new CityOfAssault { Value = "Langley" },
-                new CityOfAssault { Value = "Maple Ridge" },
-                new CityOfAssault { Value = "Mission" },
-                new CityOfAssault { Value = "New Westminster" },
-                new CityOfAssault { Value = "Pitt Meadows" },
-                new CityOfAssault { Value = "Port Coquitlam" },
-                new CityOfAssault { Value = "Port Moody" },
-                new CityOfAssault { Value = "Vancouver" },
-                new CityOfAssault { Value = "White Rock" },
-                new CityOfAssault { Value = "Yale" },
-                new CityOfAssault { Value = "Other – BC" },
-                new CityOfAssault { Value = "Out-of-Province" },
-                new CityOfAssault { Value = "International" }
-                );
-            ctx.SaveChanges();
-
-            ctx.CitiesOfResidence.AddOrUpdate(
-                c => c.Value,
-                new CityOfResidence { Value = "Surrey" },
-                new CityOfResidence { Value = "Abbotsford" },
-                new CityOfResidence { Value = "Agassiz" },
-                new CityOfResidence { Value = "Boston Bar" },
-                new CityOfResidence { Value = "Burnaby" },
-                new CityOfResidence { Value = "Chilliwack" },
-                new CityOfResidence { Value = "Coquitlam" },
-                new CityOfResidence { Value = "Delta" },
-                new CityOfResidence { Value = "Harrison Hot Springs" },
-                new CityOfResidence { Value = "Hope" },
-                new CityOfResidence { Value = "Langley" },
-                new CityOfResidence { Value = "Maple Ridge" },
-                new CityOfResidence { Value = "Mission" },
-                new CityOfResidence { Value = "New Westminster" },
-                new CityOfResidence { Value = "Pitt Meadows" },
-                new CityOfResidence { Value = "Port Coquitlam" },
-                new CityOfResidence { Value = "Port Moody" },
-                new CityOfResidence { Value = "Vancouver" },
-                new CityOfResidence { Value = "White Rock" },
-                new CityOfResidence { Value = "Yale" },
-                new CityOfResidence { Value = "Other – BC" },
-                new CityOfResidence { Value = "Out-of-Province" },
-                new CityOfResidence { Value = "International" }
-                );
-            ctx.SaveChanges();
-
-            ctx.ReferringHospitals.AddOrUpdate(
-                r => r.Value,
-                new ReferringHospital { Value = "Abbotsford Regional Hospital" },
-                new ReferringHospital { Value = "Surrey Memorial Hospital" },
-                new ReferringHospital { Value = "Burnaby Hospital" },
-                new ReferringHospital { Value = "Chilliwack General Hospital" },
-                new ReferringHospital { Value = "Delta Hospital" },
-                new ReferringHospital { Value = "Eagle Ridge Hospital" },
-                new ReferringHospital { Value = "Fraser Canyon Hospital" },
-                new ReferringHospital { Value = "Langley Hospital" },
-                new ReferringHospital { Value = "Mission Hospital" },
-                new ReferringHospital { Value = "Peace Arch Hospita" },
-                new ReferringHospital { Value = "Ridge Meadows Hospital" },
-                new ReferringHospital { Value = "Royal Columbia Hospital" }
-                );
-            ctx.SaveChanges();
-
-            ctx.HospitalsAttended.AddOrUpdate(
-                h => h.Value,
-                new HospitalAttended { Value = "Abbotsford Regional Hospital" },
-                new HospitalAttended { Value = "Surrey Memorial Hospital" },
-                new HospitalAttended { Value = "Burnaby Hospital" },
-                new HospitalAttended { Value = "Chilliwack General Hospital" },
-                new HospitalAttended { Value = "Delta Hospital" },
-                new HospitalAttended { Value = "Eagle Ridge Hospital" },
-                new HospitalAttended { Value = "Fraser Canyon Hospital" },
-                new HospitalAttended { Value = "Langley Hospital" },
-                new HospitalAttended { Value = "Mission Hospital" },
-                new HospitalAttended { Value = "Peace Arch Hospita" },
-                new HospitalAttended { Value = "Ridge Meadows Hospital" },
-                new HospitalAttended { Value = "Royal Columbia Hospital" }
-                );
-            ctx.SaveChanges();
-
-            ctx.SocialWorkAttendances.AddOrUpdate(
-                a => a.Value,
-                new SocialWorkAttendance { Value = "Yes" },
-                new SocialWorkAttendance { Value = "No" },
-                new SocialWorkAttendance { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.PoliceAttendances.AddOrUpdate(
-                a => a.Value,
-                new PoliceAttendance { Value = "Yes" },
-                new PoliceAttendance { Value = "No" },
-                new PoliceAttendance { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.VictimServicesAttendances.AddOrUpdate(
-                a => a.Value,
-                new VictimServicesAttendance { Value = "Yes" },
-                new VictimServicesAttendance { Value = "No" },
-                new VictimServicesAttendance { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.MedicalOnly.AddOrUpdate(
-                m => m.Value,
-                new MedicalOnly { Value = "Yes" },
-                new MedicalOnly { Value = "No" },
-                new MedicalOnly { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.EvidenceStored.AddOrUpdate(
-                c => c.EvidenceStoredId,
-                new EvidenceStored { Value = "Yes" },
-                new EvidenceStored { Value = "No" },
-                new EvidenceStored { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.HivMeds.AddOrUpdate(
-                c => c.HivMedsId,
-                new HivMeds { Value = "Yes" },
-                new HivMeds { Value = "No" },
-                new HivMeds { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.ReferredToCbvs.AddOrUpdate(
-                c => c.ReferredToCbvsId,
-                new ReferredToCbvs { Value = "Yes" },
-                new ReferredToCbvs { Value = "No" },
-                new ReferredToCbvs { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.PoliceReported.AddOrUpdate(
-                c => c.PoliceReportedId,
-                new PoliceReported { Value = "Yes" },
-                new PoliceReported { Value = "No" },
-                new PoliceReported { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.ThirdPartyReports.AddOrUpdate(
-                c => c.ThirdPartyReportId,
-                new ThirdPartyReport { Value = "Yes" },
-                new ThirdPartyReport { Value = "No" },
-                new ThirdPartyReport { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.BadDateReports.AddOrUpdate(
-                c => c.BadDateReportId,
-                new BadDateReport { Value = "Yes" },
-                new BadDateReport { Value = "No" },
-                new BadDateReport { Value = "N/A" }
-                );
-            ctx.SaveChanges();
-
-            ctx.Smarts.AddOrUpdate(
-                c => new { c.NumberTransportsProvided },
-                new Smart
-                {
-                    SmartId = 1,
-                    ClientId = (ctx.Clients.Where(c => c.ClientId == 1).FirstOrDefault().ClientId),
-                    SexExploitationId = (ctx.SexExploitations.Where(c => c.Value == "Yes").FirstOrDefault().SexExploitationId),
-                    MultiplePerpsId = (ctx.MultiplePerps.Where(c => c.Value == "Yes").FirstOrDefault().MultiplePerpsId),
-                    DrugFacilitatedId = (ctx.DrugsFacilitated.Where(c => c.Value == "Yes").FirstOrDefault().DrugFacilitatedId),
-                    CityOfAssaultId = (ctx.CitiesOfAssault.Where(c => c.Value == "Burnaby").FirstOrDefault().CityOfAssaultId),
-                    CityOfResidenceId = (ctx.CitiesOfResidence.Where(c => c.Value == "Burnaby").FirstOrDefault().CityOfResidenceId),
-
-                    AccompanimentMinutes = 5,
-
-                    ReferringHospitalId = (ctx.ReferringHospitals.Where(c => c.Value == "Burnaby Hospital").FirstOrDefault().ReferringHospitalId),
-
-                    HospitalAttendedId = (ctx.HospitalsAttended.Where(c => c.Value == "Burnaby Hospital").FirstOrDefault().HospitalAttendedId),
-                    SocialWorkAttendanceId = (ctx.SocialWorkAttendances.Where(c => c.Value == "Yes").FirstOrDefault().SocialWorkAttendanceId),
-                    PoliceAttendanceId = (ctx.PoliceAttendances.Where(c => c.Value == "Yes").FirstOrDefault().PoliceAttendanceId),
-                    VictimServiceAttendanceId = (ctx.VictimServicesAttendances.Where(c => c.Value == "Yes").FirstOrDefault().VictimServicesAttendanceId),
-                    MedicalOnlyId = (ctx.MedicalOnly.Where(c => c.Value == "Yes").FirstOrDefault().MedicalOnlyId),
-                    EvidenceStoredId = (ctx.EvidenceStored.Where(c => c.Value == "Yes").FirstOrDefault().EvidenceStoredId),
-                    HivMedsId = (ctx.HivMeds.Where(c => c.Value == "Yes").FirstOrDefault().HivMedsId),
-                    ReferredToCbvsId = (ctx.ReferredToCbvs.Where(c => c.Value == "Yes").FirstOrDefault().ReferredToCbvsId),
-                    PoliceReportedId = (ctx.PoliceReported.Where(c => c.Value == "Yes").FirstOrDefault().PoliceReportedId),
-                    ThirdPartyReportId = (ctx.ThirdPartyReports.Where(c => c.Value == "Yes").FirstOrDefault().ThirdPartyReportId),
-                    BadDateReportId = (ctx.BadDateReports.Where(c => c.Value == "Yes").FirstOrDefault().BadDateReportId),
-
-                    NumberTransportsProvided = 2,
-                    ReferredToNursePracticioner = true
-                });
-            ctx.SaveChanges();
+            seedSmartLookups(ctx);
+            seedSmartEntity(ctx);
         }
 
 
@@ -808,6 +584,240 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                         DateReOpened = new DateTime(2015, 4, 20)
                     }
                 );
+            ctx.SaveChanges();
+        }
+
+
+        private void seedSmartLookups(ClientContext ctx)
+        {
+            ctx.SexExploitations.AddOrUpdate(
+                s => s.Value,
+                new SexExploitation { Value = "Yes" },
+                new SexExploitation { Value = "No" },
+                new SexExploitation { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.MultiplePerps.AddOrUpdate(
+                m => m.Value,
+                new MultiplePerps { Value = "Yes" },
+                new MultiplePerps { Value = "No" },
+                new MultiplePerps { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.DrugsFacilitated.AddOrUpdate(
+                m => m.Value,
+                new DrugFacilitated { Value = "Yes" },
+                new DrugFacilitated { Value = "No" },
+                new DrugFacilitated { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.CitiesOfAssault.AddOrUpdate(
+                c => c.Value,
+                new CityOfAssault { Value = "Surrey" },
+                new CityOfAssault { Value = "Abbotsford" },
+                new CityOfAssault { Value = "Agassiz" },
+                new CityOfAssault { Value = "Boston Bar" },
+                new CityOfAssault { Value = "Burnaby" },
+                new CityOfAssault { Value = "Chilliwack" },
+                new CityOfAssault { Value = "Coquitlam" },
+                new CityOfAssault { Value = "Delta" },
+                new CityOfAssault { Value = "Harrison Hot Springs" },
+                new CityOfAssault { Value = "Hope" },
+                new CityOfAssault { Value = "Langley" },
+                new CityOfAssault { Value = "Maple Ridge" },
+                new CityOfAssault { Value = "Mission" },
+                new CityOfAssault { Value = "New Westminster" },
+                new CityOfAssault { Value = "Pitt Meadows" },
+                new CityOfAssault { Value = "Port Coquitlam" },
+                new CityOfAssault { Value = "Port Moody" },
+                new CityOfAssault { Value = "Vancouver" },
+                new CityOfAssault { Value = "White Rock" },
+                new CityOfAssault { Value = "Yale" },
+                new CityOfAssault { Value = "Other – BC" },
+                new CityOfAssault { Value = "Out-of-Province" },
+                new CityOfAssault { Value = "International" }
+                );
+            ctx.SaveChanges();
+
+            ctx.CitiesOfResidence.AddOrUpdate(
+                c => c.Value,
+                new CityOfResidence { Value = "Surrey" },
+                new CityOfResidence { Value = "Abbotsford" },
+                new CityOfResidence { Value = "Agassiz" },
+                new CityOfResidence { Value = "Boston Bar" },
+                new CityOfResidence { Value = "Burnaby" },
+                new CityOfResidence { Value = "Chilliwack" },
+                new CityOfResidence { Value = "Coquitlam" },
+                new CityOfResidence { Value = "Delta" },
+                new CityOfResidence { Value = "Harrison Hot Springs" },
+                new CityOfResidence { Value = "Hope" },
+                new CityOfResidence { Value = "Langley" },
+                new CityOfResidence { Value = "Maple Ridge" },
+                new CityOfResidence { Value = "Mission" },
+                new CityOfResidence { Value = "New Westminster" },
+                new CityOfResidence { Value = "Pitt Meadows" },
+                new CityOfResidence { Value = "Port Coquitlam" },
+                new CityOfResidence { Value = "Port Moody" },
+                new CityOfResidence { Value = "Vancouver" },
+                new CityOfResidence { Value = "White Rock" },
+                new CityOfResidence { Value = "Yale" },
+                new CityOfResidence { Value = "Other – BC" },
+                new CityOfResidence { Value = "Out-of-Province" },
+                new CityOfResidence { Value = "International" }
+                );
+            ctx.SaveChanges();
+
+            ctx.ReferringHospitals.AddOrUpdate(
+                r => r.Value,
+                new ReferringHospital { Value = "Abbotsford Regional Hospital" },
+                new ReferringHospital { Value = "Surrey Memorial Hospital" },
+                new ReferringHospital { Value = "Burnaby Hospital" },
+                new ReferringHospital { Value = "Chilliwack General Hospital" },
+                new ReferringHospital { Value = "Delta Hospital" },
+                new ReferringHospital { Value = "Eagle Ridge Hospital" },
+                new ReferringHospital { Value = "Fraser Canyon Hospital" },
+                new ReferringHospital { Value = "Langley Hospital" },
+                new ReferringHospital { Value = "Mission Hospital" },
+                new ReferringHospital { Value = "Peace Arch Hospita" },
+                new ReferringHospital { Value = "Ridge Meadows Hospital" },
+                new ReferringHospital { Value = "Royal Columbia Hospital" }
+                );
+            ctx.SaveChanges();
+
+            ctx.HospitalsAttended.AddOrUpdate(
+                h => h.Value,
+                new HospitalAttended { Value = "Abbotsford Regional Hospital" },
+                new HospitalAttended { Value = "Surrey Memorial Hospital" },
+                new HospitalAttended { Value = "Burnaby Hospital" },
+                new HospitalAttended { Value = "Chilliwack General Hospital" },
+                new HospitalAttended { Value = "Delta Hospital" },
+                new HospitalAttended { Value = "Eagle Ridge Hospital" },
+                new HospitalAttended { Value = "Fraser Canyon Hospital" },
+                new HospitalAttended { Value = "Langley Hospital" },
+                new HospitalAttended { Value = "Mission Hospital" },
+                new HospitalAttended { Value = "Peace Arch Hospita" },
+                new HospitalAttended { Value = "Ridge Meadows Hospital" },
+                new HospitalAttended { Value = "Royal Columbia Hospital" }
+                );
+            ctx.SaveChanges();
+
+            ctx.SocialWorkAttendances.AddOrUpdate(
+                a => a.Value,
+                new SocialWorkAttendance { Value = "Yes" },
+                new SocialWorkAttendance { Value = "No" },
+                new SocialWorkAttendance { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.PoliceAttendances.AddOrUpdate(
+                a => a.Value,
+                new PoliceAttendance { Value = "Yes" },
+                new PoliceAttendance { Value = "No" },
+                new PoliceAttendance { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.VictimServicesAttendances.AddOrUpdate(
+                a => a.Value,
+                new VictimServicesAttendance { Value = "Yes" },
+                new VictimServicesAttendance { Value = "No" },
+                new VictimServicesAttendance { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.MedicalOnly.AddOrUpdate(
+                m => m.Value,
+                new MedicalOnly { Value = "Yes" },
+                new MedicalOnly { Value = "No" },
+                new MedicalOnly { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.EvidenceStored.AddOrUpdate(
+                c => c.EvidenceStoredId,
+                new EvidenceStored { Value = "Yes" },
+                new EvidenceStored { Value = "No" },
+                new EvidenceStored { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.HivMeds.AddOrUpdate(
+                c => c.HivMedsId,
+                new HivMeds { Value = "Yes" },
+                new HivMeds { Value = "No" },
+                new HivMeds { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.ReferredToCbvs.AddOrUpdate(
+                c => c.ReferredToCbvsId,
+                new ReferredToCbvs { Value = "Yes" },
+                new ReferredToCbvs { Value = "No" },
+                new ReferredToCbvs { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.PoliceReported.AddOrUpdate(
+                c => c.PoliceReportedId,
+                new PoliceReported { Value = "Yes" },
+                new PoliceReported { Value = "No" },
+                new PoliceReported { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.ThirdPartyReports.AddOrUpdate(
+                c => c.ThirdPartyReportId,
+                new ThirdPartyReport { Value = "Yes" },
+                new ThirdPartyReport { Value = "No" },
+                new ThirdPartyReport { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+
+            ctx.BadDateReports.AddOrUpdate(
+                c => c.BadDateReportId,
+                new BadDateReport { Value = "Yes" },
+                new BadDateReport { Value = "No" },
+                new BadDateReport { Value = "N/A" }
+                );
+            ctx.SaveChanges();
+        }
+
+        private void seedSmartEntity(ClientContext ctx)
+        {
+            ctx.Smarts.AddOrUpdate(
+                c => new { c.NumberTransportsProvided },
+                new Smart
+                {
+                    SmartId = 1,
+                    ClientId = (ctx.Clients.Where(c => c.ClientId == 1).FirstOrDefault().ClientId),
+                    SexExploitationId = (ctx.SexExploitations.Where(c => c.Value == "Yes").FirstOrDefault().SexExploitationId),
+                    MultiplePerpsId = (ctx.MultiplePerps.Where(c => c.Value == "Yes").FirstOrDefault().MultiplePerpsId),
+                    DrugFacilitatedId = (ctx.DrugsFacilitated.Where(c => c.Value == "Yes").FirstOrDefault().DrugFacilitatedId),
+                    CityOfAssaultId = (ctx.CitiesOfAssault.Where(c => c.Value == "Burnaby").FirstOrDefault().CityOfAssaultId),
+                    CityOfResidenceId = (ctx.CitiesOfResidence.Where(c => c.Value == "Burnaby").FirstOrDefault().CityOfResidenceId),
+
+                    AccompanimentMinutes = 5,
+
+                    ReferringHospitalId = (ctx.ReferringHospitals.Where(c => c.Value == "Burnaby Hospital").FirstOrDefault().ReferringHospitalId),
+
+                    HospitalAttendedId = (ctx.HospitalsAttended.Where(c => c.Value == "Burnaby Hospital").FirstOrDefault().HospitalAttendedId),
+                    SocialWorkAttendanceId = (ctx.SocialWorkAttendances.Where(c => c.Value == "Yes").FirstOrDefault().SocialWorkAttendanceId),
+                    PoliceAttendanceId = (ctx.PoliceAttendances.Where(c => c.Value == "Yes").FirstOrDefault().PoliceAttendanceId),
+                    VictimServiceAttendanceId = (ctx.VictimServicesAttendances.Where(c => c.Value == "Yes").FirstOrDefault().VictimServicesAttendanceId),
+                    MedicalOnlyId = (ctx.MedicalOnly.Where(c => c.Value == "Yes").FirstOrDefault().MedicalOnlyId),
+                    EvidenceStoredId = (ctx.EvidenceStored.Where(c => c.Value == "Yes").FirstOrDefault().EvidenceStoredId),
+                    HivMedsId = (ctx.HivMeds.Where(c => c.Value == "Yes").FirstOrDefault().HivMedsId),
+                    ReferredToCbvsId = (ctx.ReferredToCbvs.Where(c => c.Value == "Yes").FirstOrDefault().ReferredToCbvsId),
+                    PoliceReportedId = (ctx.PoliceReported.Where(c => c.Value == "Yes").FirstOrDefault().PoliceReportedId),
+                    ThirdPartyReportId = (ctx.ThirdPartyReports.Where(c => c.Value == "Yes").FirstOrDefault().ThirdPartyReportId),
+                    BadDateReportId = (ctx.BadDateReports.Where(c => c.Value == "Yes").FirstOrDefault().BadDateReportId),
+
+                    NumberTransportsProvided = 2,
+                    ReferredToNursePracticioner = true
+                });
             ctx.SaveChanges();
         }
 
