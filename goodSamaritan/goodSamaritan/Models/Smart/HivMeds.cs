@@ -12,7 +12,7 @@ namespace GoodSamaritan.Models.Smart
 
         [Required]
         [StringLength(30)]
-        [Display(Name = "Hive Meds")]
+        [Display(Name = "HIV Meds")]
         public string Value { get; set; }
         public ICollection<Smart> Smarts { get; set; }
     }
