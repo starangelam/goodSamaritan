@@ -185,7 +185,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     IsDuplicate = "Yes"
                 }, new DuplicateFile
                 {
-                    IsDuplicate = null
+                    IsDuplicate = "null"
                 }
                 );
             context.SaveChanges();
@@ -398,7 +398,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     IsRepeat = "Yes"
                 }, new RepeatClient
                 {
-                    IsRepeat = null
+                    IsRepeat = "null"
                 }
                 );
             ctx.SaveChanges();
@@ -436,7 +436,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     Status = "Complete"
                 }, new RiskStatus
                 {
-                    Status = null
+                    Status = "null"
                 }
                 );
             ctx.SaveChanges();
