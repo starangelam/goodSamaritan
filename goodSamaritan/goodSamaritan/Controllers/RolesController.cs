@@ -89,8 +89,11 @@ namespace GoodSamaritan.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             var role = ctx.Roles.Find(id);
-            ctx.Roles.Remove(role);
-            ctx.SaveChanges();
+            if (role.Name != "Administrator")
+            {
+                ctx.Roles.Remove(role);
+                ctx.SaveChanges();
+            }
 
             return RedirectToAction("Index");
         }
