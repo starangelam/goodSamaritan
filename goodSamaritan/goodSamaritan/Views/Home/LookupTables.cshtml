@@ -2,45 +2,64 @@
     ViewBag.Title = "Lookup Tables";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
+<div class="spacer"></div>
 
-<ul>
-    <li>@Html.ActionLink("Abuser Relationship", "Index", "AbuserRelationships")</li>
-    <li>@Html.ActionLink("Age", "Index", "Ages")</li>
-    <li>@Html.ActionLink("Assigned Workers", "Index", "AssignedWorkers")</li>
-    <li>@Html.ActionLink("Crises", "Index", "Crises")</li>
-    <li>@Html.ActionLink("Duplicate Files", "Index", "DuplicateFiles")</li>
-    <li>@Html.ActionLink("More...", "LookupTables", "Home")</li>
-    <li>@Html.ActionLink("Ethnicities", "Index", "Ethnicities")</li>
-    <li>@Html.ActionLink("Family Violence Files", "Index", "FamilyViolenceFiles")</li>
-    <li>@Html.ActionLink("Incidents", "Index", "Incidents")</li>
-    <li>@Html.ActionLink("Programs", "Index", "Programs")</li>
-    <li>@Html.ActionLink("Referral Contacts", "Index", "ReferralContacts")</li>
-    <li>@Html.ActionLink("Referral Sources", "Index", "ReferralSources")</li>
-    <li>@Html.ActionLink("Repeat Clients", "Index", "RepeatClients")</li>
-    <li>@Html.ActionLink("Risk Levels", "Index", "RiskLevels")</li>
-    <li>@Html.ActionLink("Risk Statuses", "Index", "RiskStatus")</li>
-    <li>@Html.ActionLink("Services", "Index", "Services")</li>
-    <li>@Html.ActionLink("Victims Of Incidents", "Index", "VictimsOfIncidents")</li>
-    <li>@Html.ActionLink("Years", "Index", "Years")</li>
-    <li>@Html.ActionLink("Statuses Of Files", "Index", "StatusesOfFiles")</li>
-</ul>
-<ul>
-    <li>@Html.ActionLink("Sex Exploitations", "Index", "SexExploitations")</li>
-    <li>@Html.ActionLink("Multiple Perpetrators", "Index", "MultiplePerps")</li>
-    <li>@Html.ActionLink("Drugs Facilitated", "Index", "DrugFacilitateds")</li>
-    <li>@Html.ActionLink("Cities Of Assault", "Index", "CityOfAssaults")</li>
-    <li>@Html.ActionLink("Cities Of Residence", "Index", "CityOfResidences")</li>
-    <li>@Html.ActionLink("Referring Hospitals", "Index", "ReferringHospitals")</li>
-    <li>@Html.ActionLink("Hospitals Attended", "Index", "HospitalAttendeds")</li>
-    <li>@Html.ActionLink("Social Work Attendances", "Index", "SocialWorkAttendances")</li>
-    <li>@Html.ActionLink("Police Attendances", "Index", "PoliceAttendances")</li>
-    <li>@Html.ActionLink("Victim Service Attendances", "Index", "VictimServicesAttendances")</li>
-    <li>@Html.ActionLink("Medical Only", "Index", "MedicalOnlies")</li>
-    <li>@Html.ActionLink("Evidence Stored", "Index", "EvidenceStoreds")</li>
-    <li>@Html.ActionLink("HIV Medications", "Index", "HivMeds")</li>
-    <li>@Html.ActionLink("Referred To CBVS", "Index", "ReferredToCbvs")</li>
-    <li>@Html.ActionLink("Police Reported", "Index", "PoliceReporteds")</li>
-    <li>@Html.ActionLink("Third Party Reports", "Index", "ThirdPartyReports")</li>
-    <li>@Html.ActionLink("Bad Date Reports", "Index", "BadDateReports")</li>
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Client</div>
+                <div class="panel-body">
+                    <ul>
+                        <li>@Html.ActionLink("Abuser Relationship", "Index", "AbuserRelationships")</li>
+                        <li>@Html.ActionLink("Age", "Index", "Ages")</li>
+                        <li>@Html.ActionLink("Assigned Workers", "Index", "AssignedWorkers")</li>
+                        <li>@Html.ActionLink("Crises", "Index", "Crises")</li>
+                        <li>@Html.ActionLink("Duplicate Files", "Index", "DuplicateFiles")</li>
+                        <li>@Html.ActionLink("More...", "LookupTables", "Home")</li>
+                        <li>@Html.ActionLink("Ethnicities", "Index", "Ethnicities")</li>
+                        <li>@Html.ActionLink("Family Violence Files", "Index", "FamilyViolenceFiles")</li>
+                        <li>@Html.ActionLink("Incidents", "Index", "Incidents")</li>
+                        <li>@Html.ActionLink("Programs", "Index", "Programs")</li>
+                        <li>@Html.ActionLink("Referral Contacts", "Index", "ReferralContacts")</li>
+                        <li>@Html.ActionLink("Referral Sources", "Index", "ReferralSources")</li>
+                        <li>@Html.ActionLink("Repeat Clients", "Index", "RepeatClients")</li>
+                        <li>@Html.ActionLink("Risk Levels", "Index", "RiskLevels")</li>
+                        <li>@Html.ActionLink("Risk Statuses", "Index", "RiskStatus")</li>
+                        <li>@Html.ActionLink("Services", "Index", "Services")</li>
+                        <li>@Html.ActionLink("Victims Of Incidents", "Index", "VictimsOfIncidents")</li>
+                        <li>@Html.ActionLink("Years", "Index", "Years")</li>
+                        <li>@Html.ActionLink("Statuses Of Files", "Index", "StatusesOfFiles")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">SMART</div>
+                <div class="panel-body">
+                    <ul>
+                        <li>@Html.ActionLink("Sex Exploitations", "Index", "SexExploitations")</li>
+                        <li>@Html.ActionLink("Multiple Perpetrators", "Index", "MultiplePerps")</li>
+                        <li>@Html.ActionLink("Drugs Facilitated", "Index", "DrugFacilitateds")</li>
+                        <li>@Html.ActionLink("Cities Of Assault", "Index", "CityOfAssaults")</li>
+                        <li>@Html.ActionLink("Cities Of Residence", "Index", "CityOfResidences")</li>
+                        <li>@Html.ActionLink("Referring Hospitals", "Index", "ReferringHospitals")</li>
+                        <li>@Html.ActionLink("Hospitals Attended", "Index", "HospitalAttendeds")</li>
+                        <li>@Html.ActionLink("Social Work Attendances", "Index", "SocialWorkAttendances")</li>
+                        <li>@Html.ActionLink("Police Attendances", "Index", "PoliceAttendances")</li>
+                        <li>@Html.ActionLink("Victim Service Attendances", "Index", "VictimServicesAttendances")</li>
+                        <li>@Html.ActionLink("Medical Only", "Index", "MedicalOnlies")</li>
+                        <li>@Html.ActionLink("Evidence Stored", "Index", "EvidenceStoreds")</li>
+                        <li>@Html.ActionLink("HIV Medications", "Index", "HivMeds")</li>
+                        <li>@Html.ActionLink("Referred To CBVS", "Index", "ReferredToCbvs")</li>
+                        <li>@Html.ActionLink("Police Reported", "Index", "PoliceReporteds")</li>
+                        <li>@Html.ActionLink("Third Party Reports", "Index", "ThirdPartyReports")</li>
+                        <li>@Html.ActionLink("Bad Date Reports", "Index", "BadDateReports")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
