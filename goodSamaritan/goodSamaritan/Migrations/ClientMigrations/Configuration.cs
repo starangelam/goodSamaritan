@@ -417,7 +417,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 },
                 new RiskLevel
                 {
-                    Level = null
+                    Level = "null"
                 }
                 );
             ctx.SaveChanges();

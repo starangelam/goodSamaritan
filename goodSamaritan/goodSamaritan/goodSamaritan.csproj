@@ -202,9 +202,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503060544032_ClientInitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503060544032_ClientInitialCreate.Designer.cs">
-      <DependentUpon>201503060544032_ClientInitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.Designer.cs">
+      <DependentUpon>201503060638244_ClientInitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
@@ -524,8 +524,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503060544032_ClientInitialCreate.resx">
-      <DependentUpon>201503060544032_ClientInitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.resx">
+      <DependentUpon>201503060638244_ClientInitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>

@@ -3,14 +3,11 @@ enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations
 
 # ran on every database change
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "ClientInitialCreate"
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "SmartAddRequired"
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "SmartValidateLookup"
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "SmartValidateLookup2"
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
 # to revert change
-Update-Database -TargetMigration 201503060412002_SmartValidateLookup -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
+Update-Database -TargetMigration 201503060638244_ClientInitialCreate -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
 # --------------
 # ApplicationDbContext

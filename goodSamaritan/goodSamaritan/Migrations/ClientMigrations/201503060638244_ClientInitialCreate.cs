@@ -160,7 +160,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                 c => new
                     {
                         IncidentId = c.Int(nullable: false, identity: true),
-                        Type = c.String(nullable: false, maxLength: 30),
+                        Type = c.String(nullable: false, maxLength: 64),
                     })
                 .PrimaryKey(t => t.IncidentId);
             
