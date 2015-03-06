@@ -5,6 +5,7 @@ enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "ClientInitialCreate"
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "SmartAddRequired"
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "SmartValidateLookup"
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "SmartValidateLookup2"
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 

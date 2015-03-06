@@ -12,7 +12,7 @@ namespace GoodSamaritan.Models.Smart
 
         [Required]
         [StringLength(30)]
-        [Display(Name = "Is Bad Date Reported")]
+        [Display(Name = "Bad Date Report")]
         public string IsBadDateReported { get; set; }
         public ICollection<Smart> Smarts { get; set; }
     }

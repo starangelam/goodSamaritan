@@ -197,6 +197,10 @@
     <Compile Include="Migrations\ClientMigrations\201503060412002_SmartValidateLookup.Designer.cs">
       <DependentUpon>201503060412002_SmartValidateLookup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503060509550_SmartValidateLookup2.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503060509550_SmartValidateLookup2.Designer.cs">
+      <DependentUpon>201503060509550_SmartValidateLookup2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.Designer.cs">
@@ -442,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ClientMigrations\201503060412002_SmartValidateLookup.resx">
       <DependentUpon>201503060412002_SmartValidateLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503060509550_SmartValidateLookup2.resx">
+      <DependentUpon>201503060509550_SmartValidateLookup2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>
