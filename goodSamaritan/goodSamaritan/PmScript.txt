@@ -3,8 +3,12 @@ enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations
 
 # ran on every database change
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "ClientInitialCreate"
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "SmartAddRequired"
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
+
+# to revert change
+Update-Database -TargetMigration 201503050220587_ClientInitialCreate -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
 # --------------
 # ApplicationDbContext

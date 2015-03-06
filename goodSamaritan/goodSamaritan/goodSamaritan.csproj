@@ -189,6 +189,10 @@
     <Compile Include="Migrations\ClientMigrations\201503050220587_ClientInitialCreate.Designer.cs">
       <DependentUpon>201503050220587_ClientInitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503060345388_SmartAddRequired.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503060345388_SmartAddRequired.Designer.cs">
+      <DependentUpon>201503060345388_SmartAddRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.Designer.cs">
@@ -428,6 +432,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\ClientMigrations\201503050220587_ClientInitialCreate.resx">
       <DependentUpon>201503050220587_ClientInitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503060345388_SmartAddRequired.resx">
+      <DependentUpon>201503060345388_SmartAddRequired.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>
