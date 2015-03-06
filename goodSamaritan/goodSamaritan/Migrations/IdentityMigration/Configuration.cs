@@ -18,7 +18,7 @@ namespace GoodSamaritan.Migrations.IdentityMigration
 
         protected override void Seed(GoodSamaritan.Models.ApplicationDbContext context)
         {
-            // create roles: administrator, worker, report
+            // create roles: administrator, worker, reporter
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             if (!roleManager.RoleExists("Administrator"))
                 roleManager.Create(new IdentityRole("Administrator"));
@@ -26,8 +26,8 @@ namespace GoodSamaritan.Migrations.IdentityMigration
             if (!roleManager.RoleExists("Worker"))
                 roleManager.Create(new IdentityRole("Worker"));
 
-            if (!roleManager.RoleExists("Report"))
-                roleManager.Create(new IdentityRole("Report"));
+            if (!roleManager.RoleExists("Reporter"))
+                roleManager.Create(new IdentityRole("Reporter"));
 
             // create users
             string email;
@@ -55,7 +55,7 @@ namespace GoodSamaritan.Migrations.IdentityMigration
             {
                 ApplicationUser userToInsert = new ApplicationUser { UserName = email, Email = email };
                 userManager.Create(userToInsert, password);
-                userManager.AddToRole(userToInsert.Id, "Report");
+                userManager.AddToRole(userToInsert.Id, "Reporter");
             }
         }
     }
