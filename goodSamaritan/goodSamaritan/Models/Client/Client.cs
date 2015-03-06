@@ -31,7 +31,7 @@ namespace goodSamaritan.Models.Client
         public string PoliceFileNumber { get; set; }
 
         // Should NOT be required (for some reason is)
-        public int CourtFileNumber { get; set; }
+        public int? CourtFileNumber { get; set; }
 
         [Required]
         public int SWCFileNumber { get; set; }

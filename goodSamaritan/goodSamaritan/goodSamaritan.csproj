@@ -206,6 +206,10 @@
     <Compile Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.Designer.cs">
       <DependentUpon>201503060638244_ClientInitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ClientMigrations\201503060753264_allowNullable.cs" />
+    <Compile Include="Migrations\ClientMigrations\201503060753264_allowNullable.Designer.cs">
+      <DependentUpon>201503060753264_allowNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.Designer.cs">
@@ -526,6 +530,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.resx">
       <DependentUpon>201503060638244_ClientInitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201503060753264_allowNullable.resx">
+      <DependentUpon>201503060753264_allowNullable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>

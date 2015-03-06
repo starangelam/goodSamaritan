@@ -3,6 +3,7 @@ enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations
 
 # ran on every database change
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "ClientInitialCreate"
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "allowNullable"
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
