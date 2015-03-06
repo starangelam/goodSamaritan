@@ -8,7 +8,6 @@ namespace GoodSamaritan.Models.Smart
 {
     public class EvidenceStored
     {
-        [Required]
         public int EvidenceStoredId { get; set; }
 
         [Required]

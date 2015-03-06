@@ -8,7 +8,6 @@ namespace GoodSamaritan.Models.Smart
 {
     public class CityOfAssault
     {
-        [Required]
         public int CityOfAssaultId { get; set; }
 
         [Required]

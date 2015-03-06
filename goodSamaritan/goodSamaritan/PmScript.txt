@@ -9,7 +9,7 @@ add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.C
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
 # to revert change
-Update-Database -TargetMigration 201503060345388_SmartAddRequired -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
+Update-Database -TargetMigration 201503060412002_SmartValidateLookup -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
 # --------------
 # ApplicationDbContext

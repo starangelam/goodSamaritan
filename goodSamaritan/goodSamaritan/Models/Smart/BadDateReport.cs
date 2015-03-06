@@ -8,7 +8,6 @@ namespace GoodSamaritan.Models.Smart
 {
     public class BadDateReport
     {
-        [Required]
         public int BadDateReportId { get; set; }
 
         [Required]

@@ -8,7 +8,6 @@ namespace GoodSamaritan.Models.Smart
 {
     public class DrugFacilitated
     {
-        [Required]
         public int DrugFacilitatedId { get; set; }
 
         [Required]

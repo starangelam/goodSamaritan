@@ -8,7 +8,6 @@ namespace GoodSamaritan.Models.Smart
 {
     public class HivMeds
     {
-        [Required]
         public int HivMedsId { get; set; }
 
         [Required]

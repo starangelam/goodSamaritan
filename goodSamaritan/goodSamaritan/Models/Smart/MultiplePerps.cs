@@ -8,7 +8,6 @@ namespace GoodSamaritan.Models.Smart
 {
     public class MultiplePerps
     {
-        [Required]
         public int MultiplePerpsId { get; set; }
 
         [Required]
