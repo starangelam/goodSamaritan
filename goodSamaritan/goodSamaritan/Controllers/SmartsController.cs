@@ -204,7 +204,27 @@ namespace GoodSamaritan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Smart smart = await db.Smarts.FindAsync(id);
+            Smart smart = await db.Smarts
+                .Include(s => s.BadDateReport)
+                .Include(s => s.CityOfAssault)
+                .Include(s => s.CityOfResidence)
+                .Include(s => s.Client)
+                .Include(s => s.DrugFacilitated)
+                .Include(s => s.EvidenceStored)
+                .Include(s => s.HivMeds)
+                .Include(s => s.HospitalAttended)
+                .Include(s => s.MedicalOnly)
+                .Include(s => s.MultiplePerps)
+                .Include(s => s.PoliceAttendance)
+                .Include(s => s.PoliceReported)
+                .Include(s => s.ReferredToCbvs)
+                .Include(s => s.ReferringHospital)
+                .Include(s => s.SexExploitation)
+                .Include(s => s.SocialWorkAttendance)
+                .Include(s => s.ThirdPartyReport)
+                .Where(s => s.SmartId == id)
+                .SingleOrDefaultAsync();
+
             if (smart == null)
             {
                 return HttpNotFound();
