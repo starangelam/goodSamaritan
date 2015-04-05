@@ -8,6 +8,8 @@ using goodSamaritan.Models.Client;
 
 namespace GoodSamaritan.Controllers
 {
+    [Authorize]
+    [System.Web.Http.Cors.EnableCors("*", "*", "GET")]
     public class ReportsController : ApiController
     {
         private ClientContext db = new ClientContext();
