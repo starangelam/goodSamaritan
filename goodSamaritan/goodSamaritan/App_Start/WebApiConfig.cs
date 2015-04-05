@@ -18,8 +18,8 @@ namespace GoodSamaritan
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
-            //var cors = new EnableCorsAttribute("*", "*", "GET");
-            config.EnableCors();
+            var cors = new EnableCorsAttribute("*", "*", "GET,POST");
+            config.EnableCors(cors);
 
             config.MapHttpAttributeRoutes();
 

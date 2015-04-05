@@ -5,11 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using goodSamaritan.Models.Client;
+using System.Web.Http.Cors;
 
 namespace GoodSamaritan.Controllers
 {
     [Authorize]
-    [System.Web.Http.Cors.EnableCors("*", "*", "GET")]
+    // [EnableCors("*", "*", "GET")]
     public class ReportsController : ApiController
     {
         private ClientContext db = new ClientContext();
