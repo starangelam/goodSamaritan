@@ -217,9 +217,11 @@
     <Compile Include="Controllers\SmartsController.cs" />
     <Compile Include="Controllers\SocialWorkAttendancesController.cs" />
     <Compile Include="Controllers\StatusesOfFilesController.cs" />
+    <Compile Include="Controllers\StatusOfFilesController.cs" />
     <Compile Include="Controllers\ThirdPartyReportsController.cs" />
     <Compile Include="Controllers\VictimServicesAttendancesController.cs" />
     <Compile Include="Controllers\VictimsOfIncidentsController.cs" />
+    <Compile Include="Controllers\WorkersController.cs" />
     <Compile Include="Controllers\YearsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">

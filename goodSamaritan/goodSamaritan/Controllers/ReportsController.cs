@@ -9,7 +9,7 @@ using System.Web.Http.Cors;
 
 namespace GoodSamaritan.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator, Worker, Reporter")]
     // [EnableCors("*", "*", "GET")]
     public class ReportsController : ApiController
     {
