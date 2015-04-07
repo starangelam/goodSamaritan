@@ -264,6 +264,7 @@
     <Compile Include="Models\Client\Year.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Smart\BadDateReport.cs" />
     <Compile Include="Models\Smart\CityOfAssault.cs" />
     <Compile Include="Models\Smart\CityOfResidence.cs" />
