@@ -91,7 +91,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ClientId,YearId,Month,Day,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SWCFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,AssessmentAssgndTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,ReferralContactId,IncidentId,AbuserSFName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenZeroToSix,NumChildrenSevenToTwelve,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] Client client)
+        public async Task<ActionResult> Create([Bind(Include = "ClientId,YearId,Month,Day,Gender,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SWCFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,AssessmentAssgndTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,ReferralContactId,IncidentId,AbuserSFName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenZeroToSix,NumChildrenSevenToTwelve,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -159,7 +159,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ClientId,YearId,Month,Day,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SWCFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,AssessmentAssgndTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,ReferralContactId,IncidentId,AbuserSFName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenZeroToSix,NumChildrenSevenToTwelve,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] Client client)
+        public async Task<ActionResult> Edit([Bind(Include = "ClientId,YearId,Month,Day,Gender,Surname,FirstName,PoliceFileNumber,CourtFileNumber,SWCFileNumber,RiskLevelId,CrisisId,ServiceId,ProgramId,AssessmentAssgndTo,RiskStatusId,AssignedWorkerId,ReferralSourceId,ReferralContactId,IncidentId,AbuserSFName,AbuserRelationshipId,VictimOfIncidentId,FamilyViolenceFileId,EthnicityId,AgeId,RepeatClientId,DuplicateFileId,NumChildrenZeroToSix,NumChildrenSevenToTwelve,StatusOfFileId,DateLastTransferred,DateClosed,DateReOpened")] Client client)
         {
             if (ModelState.IsValid)
             {
