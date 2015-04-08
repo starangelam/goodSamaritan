@@ -64,7 +64,7 @@ namespace GoodSamaritan.Models.Smart
         public PoliceAttendance PoliceAttendance { get; set; }
 
         [Display(Name = "Victim Service Attendance")]
-        public int VictimServiceAttendanceId { get; set; }
+        public int VictimServicesAttendanceId { get; set; }
         public VictimServicesAttendance VictimServicesAttendance { get; set; }
 
         [Display(Name = "Medical Only")]

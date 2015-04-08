@@ -806,7 +806,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
                     HospitalAttendedId = (ctx.HospitalsAttended.Where(c => c.Value == "Burnaby Hospital").FirstOrDefault().HospitalAttendedId),
                     SocialWorkAttendanceId = (ctx.SocialWorkAttendances.Where(c => c.Value == "Yes").FirstOrDefault().SocialWorkAttendanceId),
                     PoliceAttendanceId = (ctx.PoliceAttendances.Where(c => c.Value == "Yes").FirstOrDefault().PoliceAttendanceId),
-                    VictimServiceAttendanceId = (ctx.VictimServicesAttendances.Where(c => c.Value == "Yes").FirstOrDefault().VictimServicesAttendanceId),
+                    VictimServicesAttendanceId = (ctx.VictimServicesAttendances.Where(c => c.Value == "Yes").FirstOrDefault().VictimServicesAttendanceId),
                     MedicalOnlyId = (ctx.MedicalOnly.Where(c => c.Value == "Yes").FirstOrDefault().MedicalOnlyId),
                     EvidenceStoredId = (ctx.EvidenceStored.Where(c => c.Value == "Yes").FirstOrDefault().EvidenceStoredId),
                     HivMedsId = (ctx.HivMeds.Where(c => c.Value == "Yes").FirstOrDefault().HivMedsId),

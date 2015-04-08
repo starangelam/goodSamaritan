@@ -21,23 +21,10 @@ namespace GoodSamaritan.Controllers
         public async Task<ActionResult> Index()
         {
             var smarts = db.Smarts
-                .Include(s => s.BadDateReport)
-                .Include(s => s.CityOfAssault)
-                .Include(s => s.CityOfResidence)
                 .Include(s => s.Client)
-                .Include(s => s.DrugFacilitated)
-                .Include(s => s.EvidenceStored)
-                .Include(s => s.HivMeds)
+                .Include(s => s.CityOfAssault)
                 .Include(s => s.HospitalAttended)
-                .Include(s => s.MedicalOnly)
-                .Include(s => s.MultiplePerps)
-                .Include(s => s.PoliceAttendance)
-                .Include(s => s.PoliceReported)
-                .Include(s => s.ReferredToCbvs)
-                .Include(s => s.ReferringHospital)
-                .Include(s => s.SexExploitation)
-                .Include(s => s.SocialWorkAttendance)
-                .Include(s => s.ThirdPartyReport);
+                .Include(s => s.SocialWorkAttendance);
             return View(await smarts.ToListAsync());
         }
 
@@ -66,6 +53,7 @@ namespace GoodSamaritan.Controllers
                 .Include(s => s.SexExploitation)
                 .Include(s => s.SocialWorkAttendance)
                 .Include(s => s.ThirdPartyReport)
+                .Include(s => s.VictimServicesAttendance)
                 .Where(s => s.SmartId == id)
                 .SingleOrDefaultAsync();
             if (smart == null)
@@ -95,6 +83,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.SexExploitationId = new SelectList(db.SexExploitations, "SexExploitationId", "Value");
             ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "Value");
             ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "Value");
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "Value");
             return View();
         }
 
@@ -103,7 +92,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "SmartId,ClientId,SexExploitationId,MultiplePerpsId,DrugFacilitatedId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinutes,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServiceAttendanceId,MedicalOnlyId,EvidenceStoredId,HivMedsId,ReferredToCbvsId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePracticioner")] Smart smart)
+        public async Task<ActionResult> Create([Bind(Include = "SmartId,ClientId,SexExploitationId,MultiplePerpsId,DrugFacilitatedId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinutes,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HivMedsId,ReferredToCbvsId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePracticioner")] Smart smart)
         {
             if (ModelState.IsValid)
             {
@@ -129,6 +118,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.SexExploitationId = new SelectList(db.SexExploitations, "SexExploitationId", "Value", smart.SexExploitationId);
             ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "Value", smart.SocialWorkAttendanceId);
             ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "Value", smart.ThirdPartyReportId);
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "Value");
             return View(smart);
         }
 
@@ -161,6 +151,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.SexExploitationId = new SelectList(db.SexExploitations, "SexExploitationId", "Value", smart.SexExploitationId);
             ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "Value", smart.SocialWorkAttendanceId);
             ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "Value", smart.ThirdPartyReportId);
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "Value");
             return View(smart);
         }
 
@@ -169,7 +160,7 @@ namespace GoodSamaritan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "SmartId,ClientId,SexExploitationId,MultiplePerpsId,DrugFacilitatedId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinutes,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServiceAttendanceId,MedicalOnlyId,EvidenceStoredId,HivMedsId,ReferredToCbvsId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePracticioner")] Smart smart)
+        public async Task<ActionResult> Edit([Bind(Include = "SmartId,ClientId,SexExploitationId,MultiplePerpsId,DrugFacilitatedId,CityOfAssaultId,CityOfResidenceId,AccompanimentMinutes,ReferringHospitalId,HospitalAttendedId,SocialWorkAttendanceId,PoliceAttendanceId,VictimServicesAttendanceId,MedicalOnlyId,EvidenceStoredId,HivMedsId,ReferredToCbvsId,PoliceReportedId,ThirdPartyReportId,BadDateReportId,NumberTransportsProvided,ReferredToNursePracticioner")] Smart smart)
         {
             if (ModelState.IsValid)
             {
@@ -194,6 +185,7 @@ namespace GoodSamaritan.Controllers
             ViewBag.SexExploitationId = new SelectList(db.SexExploitations, "SexExploitationId", "Value", smart.SexExploitationId);
             ViewBag.SocialWorkAttendanceId = new SelectList(db.SocialWorkAttendances, "SocialWorkAttendanceId", "Value", smart.SocialWorkAttendanceId);
             ViewBag.ThirdPartyReportId = new SelectList(db.ThirdPartyReports, "ThirdPartyReportId", "Value", smart.ThirdPartyReportId);
+            ViewBag.VictimServicesAttendanceId = new SelectList(db.VictimServicesAttendances, "VictimServicesAttendanceId", "Value");
             return View(smart);
         }
 
@@ -222,6 +214,7 @@ namespace GoodSamaritan.Controllers
                 .Include(s => s.SexExploitation)
                 .Include(s => s.SocialWorkAttendance)
                 .Include(s => s.ThirdPartyReport)
+                .Include(s => s.VictimServicesAttendance)
                 .Where(s => s.SmartId == id)
                 .SingleOrDefaultAsync();
 
