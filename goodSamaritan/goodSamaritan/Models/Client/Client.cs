@@ -13,8 +13,8 @@ namespace goodSamaritan.Models.Client
 
         [Required]
         [Display(Name="Fiscal Year")]
-        public virtual Year FiscalYear { get; set; }
         public int YearId { get; set; }
+        public virtual Year FiscalYear { get; set; }
 
         [Required]
         [Range(1,12)]
@@ -45,45 +45,45 @@ namespace goodSamaritan.Models.Client
         [Range(0, 2147483647)]
         public int SWCFileNumber { get; set; }
 
-        public virtual RiskLevel RiskLevel { get; set; }
         public int RiskLevelId { get; set; }
+        public virtual RiskLevel RiskLevel { get; set; }
         
         [Required]
-        public virtual Crisis Crisis { get; set; }
         public int CrisisId { get; set; }
+        public virtual Crisis Crisis { get; set; }
 
         // TODO Add "Default values: 
         //      'File' if SWC selected
         //      'N/A' if SWC is blanks
         [Required]
-        public virtual Service Service { get; set; }
         public int ServiceId { get; set; }
+        public virtual Service Service { get; set; }
 
         [Required]
-        public virtual Program Program { get; set; }
         public int ProgramId { get; set; }
+        public virtual Program Program { get; set; }
 
         [Required]
         [StringLength(64, MinimumLength=2)]
         public string AssessmentAssgndTo { get; set; }
 
-        public virtual RiskStatus RiskStatus { get; set; }
         public int RiskStatusId { get; set; }
+        public virtual RiskStatus RiskStatus { get; set; }
 
-        public virtual AssignedWorker AssignedWorkder { get; set; }
         public int AssignedWorkerId { get; set; }
+        public virtual AssignedWorker AssignedWorkder { get; set; }
 
         [Required]
-        public virtual ReferralSource ReferralSource { get; set; }
         public int ReferralSourceId { get; set; }
+        public virtual ReferralSource ReferralSource { get; set; }
 
         [Required]
-        public virtual ReferralContact ReferralContact { get; set; }
         public int ReferralContactId { get; set; }
+        public virtual ReferralContact ReferralContact { get; set; }
 
         [Required]
-        public virtual Incident Incident { get; set; }
         public int IncidentId { get; set; }
+        public virtual Incident Incident { get; set; }
 
         [Required]
         [MaxLength(64), MinLength(4)]
@@ -91,15 +91,15 @@ namespace goodSamaritan.Models.Client
         public string AbuserSFName { get; set; }
 
         [Required]
-        public virtual AbuserRelationship AbuserRelationship { get; set; }
         public int AbuserRelationshipId { get; set; }
+        public virtual AbuserRelationship AbuserRelationship { get; set; }
 
         [Required]
-        public virtual VictimOfIncident VictimOfIncident { get; set; }
         public int VictimOfIncidentId { get; set; }
+        public virtual VictimOfIncident VictimOfIncident { get; set; }
 
-        public virtual FamilyViolenceFile FamilyViolenceFile { get; set; }
         public int FamilyViolenceFileId { get; set; }
+        public virtual FamilyViolenceFile FamilyViolenceFile { get; set; }
 
         [Required]
         [MaxLength(1)]
@@ -107,18 +107,18 @@ namespace goodSamaritan.Models.Client
         public string Gender { get; set; }
 
         [Required]
-        public virtual Ethnicity Ethnicity { get; set; }
         public int EthnicityId { get; set; }
+        public virtual Ethnicity Ethnicity { get; set; }
         
         [Required]
-        public virtual Age Age { get; set; }
         public int AgeId { get; set; }
+        public virtual Age Age { get; set; }
 
-        public virtual RepeatClient RepeatClient { get; set; }
         public int RepeatClientId { get; set; }
+        public virtual RepeatClient RepeatClient { get; set; }
 
-        public virtual DuplicateFile DuplicateFile { get; set; }
         public int DuplicateFileId { get; set; }
+        public virtual DuplicateFile DuplicateFile { get; set; }
 
         [Required]
         [Range(0,30)]
@@ -129,8 +129,8 @@ namespace goodSamaritan.Models.Client
         public int NumChildrenSevenToTwelve { get; set; }
 
         [Required]
-        public virtual StatusOfFile StatusOfFile { get; set; }
         public int StatusOfFileId { get; set; }
+        public virtual StatusOfFile StatusOfFile { get; set; }
 
         public DateTime? DateLastTransferred { get; set; }
 
