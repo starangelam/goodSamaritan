@@ -20,24 +20,10 @@ namespace GoodSamaritan.Controllers
         public async Task<ActionResult> Index()
         {
             var clients = db.Clients
-                .Include(c => c.AbuserRelationship)
-                .Include(c => c.Age)
-                .Include(c => c.AssignedWorkder)
-                .Include(c => c.Crisis)
-                .Include(c => c.DuplicateFile)
-                .Include(c => c.Ethnicity)
-                .Include(c => c.FamilyViolenceFile)
                 .Include(c => c.FiscalYear)
-                .Include(c => c.Incident)
+                .Include(c => c.AssignedWorkder)
                 .Include(c => c.Program)
-                .Include(c => c.ReferralContact)
-                .Include(c => c.ReferralSource)
-                .Include(c => c.RepeatClient)
-                .Include(c => c.RiskLevel)
-                .Include(c => c.RiskStatus)
-                .Include(c => c.Service)
-                .Include(c => c.StatusOfFile)
-                .Include(c => c.VictimOfIncident);
+                .Include(c => c.StatusOfFile);
             return View(await clients.ToListAsync());
         }
 
