@@ -239,6 +239,14 @@
     <Compile Include="Migrations\ClientMigrations\201504080346219_fixBugInSmarts.Designer.cs">
       <DependentUpon>201504080346219_fixBugInSmarts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ClientMigrations\201504080520389_addConstraintsToClient.cs" />
+    <Compile Include="Migrations\ClientMigrations\201504080520389_addConstraintsToClient.Designer.cs">
+      <DependentUpon>201504080520389_addConstraintsToClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ClientMigrations\201504080529382_allowNullableDatesInClient.cs" />
+    <Compile Include="Migrations\ClientMigrations\201504080529382_allowNullableDatesInClient.Designer.cs">
+      <DependentUpon>201504080529382_allowNullableDatesInClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.Designer.cs">
@@ -568,6 +576,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ClientMigrations\201504080346219_fixBugInSmarts.resx">
       <DependentUpon>201504080346219_fixBugInSmarts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201504080520389_addConstraintsToClient.resx">
+      <DependentUpon>201504080520389_addConstraintsToClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201504080529382_allowNullableDatesInClient.resx">
+      <DependentUpon>201504080529382_allowNullableDatesInClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>

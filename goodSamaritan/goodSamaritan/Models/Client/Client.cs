@@ -12,40 +12,44 @@ namespace goodSamaritan.Models.Client
         public int ClientId { get; set; }
 
         [Required]
+        [Display(Name="Fiscal Year")]
         public Year FiscalYear { get; set; }
         public int YearId { get; set; }
 
         [Required]
         [Range(1,12)]
         public int Month { get; set; }
+
         [Required]
         [Range(1,31)]
         public int Day { get; set; }
 
         [Required]
         public string Surname { get; set; }
+
         [Required]
+        [Display(Name="First Name")]
         public string FirstName { get; set; }
 
-        [MaxLength(24)]
+        [RegularExpression(@"\d{2}-\d{5}", ErrorMessage = "Police File Number must be in 99-99999 format. e.g. 12-12345")]
+        [Display(Name="Police File Number")]
         public string PoliceFileNumber { get; set; }
 
-        // Should NOT be required (for some reason is)
+        [Range(0, 2147483647)]
         public int? CourtFileNumber { get; set; }
 
         [Required]
+        [Range(0, 2147483647)]
         public int SWCFileNumber { get; set; }
 
-        // From Lookup Tables
         public RiskLevel RiskLevel { get; set; }
         public int RiskLevelId { get; set; }
-        
         
         [Required]
         public Crisis Crisis { get; set; }
         public int CrisisId { get; set; }
 
-        // Add "Default values: 
+        // TODO Add "Default values: 
         //      'File' if SWC selected
         //      'N/A' if SWC is blanks
         [Required]
@@ -78,10 +82,9 @@ namespace goodSamaritan.Models.Client
         public Incident Incident { get; set; }
         public int IncidentId { get; set; }
 
-        // TODO:    Add Regex-validation
-        //          to match format "Smith, Bob"
         [Required]
         [MaxLength(64), MinLength(4)]
+        [RegularExpression(@"[a-zA-Z]{2,}, [a-zA-z]{2,}[a-zA-Z ]*", ErrorMessage="Name must be in surname, first name format. e.g. Smith, Bob")]
         public string AbuserSFName { get; set; }
 
         [Required]
@@ -95,9 +98,8 @@ namespace goodSamaritan.Models.Client
         public FamilyViolenceFile FamilyViolenceFile { get; set; }
         public int FamilyViolenceFileId { get; set; }
 
-        // TODO:    Add VALIDATION:
-        //          Must be 'M', 'F', or 'T'
         [Required]
+        [RegularExpression(@"[MFT]{1}", ErrorMessage = "Please enter either 'M' for Male, 'F' for Female, or 'T' for Transgender")]
         public char Gender { get; set; }
 
         [Required]
@@ -114,23 +116,22 @@ namespace goodSamaritan.Models.Client
         public DuplicateFile DuplicateFile { get; set; }
         public int DuplicateFileId { get; set; }
 
-        // TODO:    CustomValidation; Must be >= 0
         [Required]
+        [Range(0,30)]
         public int NumChildrenZeroToSix { get; set; }
 
-        // TODO:    CustomValidation; Must be >= 0
         [Required]
+        [Range(0, 30)]
         public int NumChildrenSevenToTwelve { get; set; }
 
         [Required]
         public StatusOfFile StatusOfFile { get; set; }
         public int StatusOfFileId { get; set; }
 
-        [Required]
-        public DateTime DateLastTransferred { get; set; }
-        [Required]
-        public DateTime DateClosed { get; set; }
+        public DateTime? DateLastTransferred { get; set; }
+
+        public DateTime? DateClosed { get; set; }
         
-        public DateTime DateReOpened { get; set; }
+        public DateTime? DateReOpened { get; set; }
     }
 }

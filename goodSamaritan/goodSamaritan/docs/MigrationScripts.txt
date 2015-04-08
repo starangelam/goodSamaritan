@@ -5,6 +5,8 @@ enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "ClientInitialCreate"
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "allowNullable"
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "fixBugInSmarts"
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "addConstraintsToClient"
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "allowNullableDatesInClient"
 
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
