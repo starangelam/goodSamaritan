@@ -227,25 +227,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.Designer.cs">
-      <DependentUpon>201503060638244_ClientInitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ClientMigrations\201503060753264_allowNullable.cs" />
-    <Compile Include="Migrations\ClientMigrations\201503060753264_allowNullable.Designer.cs">
-      <DependentUpon>201503060753264_allowNullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ClientMigrations\201504080346219_fixBugInSmarts.cs" />
-    <Compile Include="Migrations\ClientMigrations\201504080346219_fixBugInSmarts.Designer.cs">
-      <DependentUpon>201504080346219_fixBugInSmarts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ClientMigrations\201504080520389_addConstraintsToClient.cs" />
-    <Compile Include="Migrations\ClientMigrations\201504080520389_addConstraintsToClient.Designer.cs">
-      <DependentUpon>201504080520389_addConstraintsToClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\ClientMigrations\201504080529382_allowNullableDatesInClient.cs" />
-    <Compile Include="Migrations\ClientMigrations\201504080529382_allowNullableDatesInClient.Designer.cs">
-      <DependentUpon>201504080529382_allowNullableDatesInClient.cs</DependentUpon>
+    <Compile Include="Migrations\ClientMigrations\201504080601062_ClientInitialCreate.cs" />
+    <Compile Include="Migrations\ClientMigrations\201504080601062_ClientInitialCreate.Designer.cs">
+      <DependentUpon>201504080601062_ClientInitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ClientMigrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigration\201503042002449_InitialCreate.cs" />
@@ -568,20 +552,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503060638244_ClientInitialCreate.resx">
-      <DependentUpon>201503060638244_ClientInitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201503060753264_allowNullable.resx">
-      <DependentUpon>201503060753264_allowNullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201504080346219_fixBugInSmarts.resx">
-      <DependentUpon>201504080346219_fixBugInSmarts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201504080520389_addConstraintsToClient.resx">
-      <DependentUpon>201504080520389_addConstraintsToClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ClientMigrations\201504080529382_allowNullableDatesInClient.resx">
-      <DependentUpon>201504080529382_allowNullableDatesInClient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ClientMigrations\201504080601062_ClientInitialCreate.resx">
+      <DependentUpon>201504080601062_ClientInitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigration\201503042002449_InitialCreate.resx">
       <DependentUpon>201503042002449_InitialCreate.cs</DependentUpon>

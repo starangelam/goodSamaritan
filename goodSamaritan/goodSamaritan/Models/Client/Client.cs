@@ -25,12 +25,15 @@ namespace goodSamaritan.Models.Client
         public int Day { get; set; }
 
         [Required]
+        [MaxLength(100)]
         public string Surname { get; set; }
 
         [Required]
+        [MaxLength(100)]
         [Display(Name="First Name")]
         public string FirstName { get; set; }
 
+        [MaxLength(8)]
         [RegularExpression(@"\d{2}-\d{5}", ErrorMessage = "Police File Number must be in 99-99999 format. e.g. 12-12345")]
         [Display(Name="Police File Number")]
         public string PoliceFileNumber { get; set; }
@@ -61,7 +64,7 @@ namespace goodSamaritan.Models.Client
         public int ProgramId { get; set; }
 
         [Required]
-        [MaxLength(64),MinLength(2)]
+        [StringLength(64, MinimumLength=2)]
         public string AssessmentAssgndTo { get; set; }
 
         public RiskStatus RiskStatus { get; set; }
@@ -99,8 +102,9 @@ namespace goodSamaritan.Models.Client
         public int FamilyViolenceFileId { get; set; }
 
         [Required]
+        [MaxLength(1)]
         [RegularExpression(@"[MFT]{1}", ErrorMessage = "Please enter either 'M' for Male, 'F' for Female, or 'T' for Transgender")]
-        public char Gender { get; set; }
+        public string Gender { get; set; }
 
         [Required]
         public Ethnicity Ethnicity { get; set; }

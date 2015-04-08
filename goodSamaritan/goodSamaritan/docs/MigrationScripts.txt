@@ -3,16 +3,13 @@ enable-migrations -ContextTypeName ClientContext -MigrationsDirectory Migrations
 
 # ran on every database change
 add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "ClientInitialCreate"
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "allowNullable"
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "fixBugInSmarts"
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "addConstraintsToClient"
-add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "allowNullableDatesInClient"
+add-migration -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration "ChangeConstraintsClient"
 
 
 update-database -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
 # to revert change
-Update-Database -TargetMigration 201503060638244_ClientInitialCreate -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
+Update-Database -TargetMigration 201504080601062_ClientInitialCreate -ConfigurationTypeName GoodSamaritan.Migrations.ClientMigrations.Configuration
 
 # --------------
 # ApplicationDbContext

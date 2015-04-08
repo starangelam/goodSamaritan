@@ -7,13 +7,13 @@ namespace GoodSamaritan.Migrations.ClientMigrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class allowNullableDatesInClient : IMigrationMetadata
+    public sealed partial class ClientInitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(allowNullableDatesInClient));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ClientInitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201504080529382_allowNullableDatesInClient"; }
+            get { return "201504080601062_ClientInitialCreate"; }
         }
         
         string IMigrationMetadata.Source

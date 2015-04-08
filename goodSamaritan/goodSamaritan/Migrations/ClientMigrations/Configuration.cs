@@ -564,7 +564,7 @@ namespace GoodSamaritan.Migrations.ClientMigrations
 
                         FamilyViolenceFileId = (ctx.FamilyViolenceFiles.Where(c => c.Exists == "No").FirstOrDefault().FamilyViolenceFileId),
 
-                        Gender = 'M',
+                        Gender = "M",
 
                         EthnicityId = (ctx.Ethnicities.Where(c => c.Value == "Caucasian").FirstOrDefault().EthnicityId),
 
