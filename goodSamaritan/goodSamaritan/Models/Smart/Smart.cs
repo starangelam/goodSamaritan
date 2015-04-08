@@ -42,6 +42,7 @@ namespace GoodSamaritan.Models.Smart
         public CityOfResidence CityOfResidence { get; set; }
 
         [Required]
+        [Range(0,50)]
         [Display(Name = "Accompaniment Minutes")]
         public int AccompanimentMinutes { get; set; }
 
@@ -96,6 +97,7 @@ namespace GoodSamaritan.Models.Smart
         public BadDateReport BadDateReport { get; set; }
 
         [Required]
+        [Range(0,50)]
         [Display(Name = "Number Transports Provided")]
         public int NumberTransportsProvided { get; set; }
 
