@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Program Type")]
         [StringLength(30)]
         public string Type { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

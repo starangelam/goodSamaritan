@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Risk Status")]
         [StringLength(30)]
         public string Status { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

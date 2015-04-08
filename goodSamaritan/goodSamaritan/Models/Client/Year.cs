@@ -14,6 +14,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Fiscal Year")]
         [StringLength(30)]
         public string Range { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Risk Level")]
         [StringLength(30)]
         public string Level { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

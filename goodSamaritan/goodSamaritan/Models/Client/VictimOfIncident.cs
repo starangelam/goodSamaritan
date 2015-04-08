@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Victim Of Incident")]
         [StringLength(30)]
         public string Type { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

@@ -14,6 +14,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Assigned Worker")]
         [StringLength(50)]
         public string Name { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Repeat Client")]
         [StringLength(30)]
         public string IsRepeat { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

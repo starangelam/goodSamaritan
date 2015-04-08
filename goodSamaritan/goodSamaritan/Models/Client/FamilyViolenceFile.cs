@@ -14,6 +14,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Family Violence File Exists")]
         [StringLength(30)]
         public string Exists { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

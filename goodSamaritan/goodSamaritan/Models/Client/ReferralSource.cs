@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Referral Source")]
         [StringLength(30)]
         public string Source { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

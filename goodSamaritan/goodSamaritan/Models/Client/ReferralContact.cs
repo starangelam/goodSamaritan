@@ -9,6 +9,5 @@ namespace goodSamaritan.Models.Client
     {
         public int ReferralContactId { get; set; }
         public string Contact { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

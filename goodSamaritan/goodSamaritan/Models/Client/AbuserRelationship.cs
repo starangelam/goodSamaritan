@@ -14,6 +14,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Abuser Relationship")]
         [StringLength(30)]
         public string Relationship { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

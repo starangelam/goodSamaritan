@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Ethnicity")]
         [StringLength(30)]
         public string Value { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

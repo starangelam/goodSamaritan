@@ -13,6 +13,5 @@ namespace goodSamaritan.Models.Client
         [Display(Name = "Duplicate File")]
         [StringLength(30)]
         public string IsDuplicate { get; set; }
-        public ICollection<Client> Clients { get; set; }
     }
 }

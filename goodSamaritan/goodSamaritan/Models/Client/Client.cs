@@ -13,7 +13,7 @@ namespace goodSamaritan.Models.Client
 
         [Required]
         [Display(Name="Fiscal Year")]
-        public Year FiscalYear { get; set; }
+        public virtual Year FiscalYear { get; set; }
         public int YearId { get; set; }
 
         [Required]
@@ -45,44 +45,44 @@ namespace goodSamaritan.Models.Client
         [Range(0, 2147483647)]
         public int SWCFileNumber { get; set; }
 
-        public RiskLevel RiskLevel { get; set; }
+        public virtual RiskLevel RiskLevel { get; set; }
         public int RiskLevelId { get; set; }
         
         [Required]
-        public Crisis Crisis { get; set; }
+        public virtual Crisis Crisis { get; set; }
         public int CrisisId { get; set; }
 
         // TODO Add "Default values: 
         //      'File' if SWC selected
         //      'N/A' if SWC is blanks
         [Required]
-        public Service Service { get; set; }
+        public virtual Service Service { get; set; }
         public int ServiceId { get; set; }
 
         [Required]
-        public Program Program { get; set; }
+        public virtual Program Program { get; set; }
         public int ProgramId { get; set; }
 
         [Required]
         [StringLength(64, MinimumLength=2)]
         public string AssessmentAssgndTo { get; set; }
 
-        public RiskStatus RiskStatus { get; set; }
+        public virtual RiskStatus RiskStatus { get; set; }
         public int RiskStatusId { get; set; }
 
-        public AssignedWorker AssignedWorkder { get; set; }
+        public virtual AssignedWorker AssignedWorkder { get; set; }
         public int AssignedWorkerId { get; set; }
 
         [Required]
-        public ReferralSource ReferralSource { get; set; }
+        public virtual ReferralSource ReferralSource { get; set; }
         public int ReferralSourceId { get; set; }
 
         [Required]
-        public ReferralContact ReferralContact { get; set; }
+        public virtual ReferralContact ReferralContact { get; set; }
         public int ReferralContactId { get; set; }
 
         [Required]
-        public Incident Incident { get; set; }
+        public virtual Incident Incident { get; set; }
         public int IncidentId { get; set; }
 
         [Required]
@@ -91,14 +91,14 @@ namespace goodSamaritan.Models.Client
         public string AbuserSFName { get; set; }
 
         [Required]
-        public AbuserRelationship AbuserRelationship { get; set; }
+        public virtual AbuserRelationship AbuserRelationship { get; set; }
         public int AbuserRelationshipId { get; set; }
 
         [Required]
-        public VictimOfIncident VictimOfIncident{ get; set; }
+        public virtual VictimOfIncident VictimOfIncident { get; set; }
         public int VictimOfIncidentId { get; set; }
 
-        public FamilyViolenceFile FamilyViolenceFile { get; set; }
+        public virtual FamilyViolenceFile FamilyViolenceFile { get; set; }
         public int FamilyViolenceFileId { get; set; }
 
         [Required]
@@ -107,17 +107,17 @@ namespace goodSamaritan.Models.Client
         public string Gender { get; set; }
 
         [Required]
-        public Ethnicity Ethnicity { get; set; }
+        public virtual Ethnicity Ethnicity { get; set; }
         public int EthnicityId { get; set; }
         
         [Required]
-        public Age Age { get; set; }
+        public virtual Age Age { get; set; }
         public int AgeId { get; set; }
 
-        public RepeatClient RepeatClient { get; set; }
+        public virtual RepeatClient RepeatClient { get; set; }
         public int RepeatClientId { get; set; }
 
-        public DuplicateFile DuplicateFile { get; set; }
+        public virtual DuplicateFile DuplicateFile { get; set; }
         public int DuplicateFileId { get; set; }
 
         [Required]
@@ -129,7 +129,7 @@ namespace goodSamaritan.Models.Client
         public int NumChildrenSevenToTwelve { get; set; }
 
         [Required]
-        public StatusOfFile StatusOfFile { get; set; }
+        public virtual StatusOfFile StatusOfFile { get; set; }
         public int StatusOfFileId { get; set; }
 
         public DateTime? DateLastTransferred { get; set; }
