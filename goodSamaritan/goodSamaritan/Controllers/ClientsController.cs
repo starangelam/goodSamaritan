@@ -245,10 +245,16 @@ namespace GoodSamaritan.Controllers
             base.Dispose(disposing);
         }
 
-        public PartialViewResult RenderSmartPartial()
+        public PartialViewResult RenderEditSmartPartial()
         {
             Console.WriteLine("RenderSmartPartial()");
             return PartialView("_EditSmartPartial");
+        }
+
+        public PartialViewResult RenderCreateSmartPartial()
+        {
+            Console.WriteLine("RenderCreatePartial()");
+            return PartialView("_CreateSmartPartial");
         }
     }
 }

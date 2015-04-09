@@ -29,6 +29,9 @@ namespace GoodSamaritan
             
             bundles.Add(new ScriptBundle("~/bundles/bonnet").Include(
                       "~/Scripts/jquery.bonnet*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ajax").Include(
+                      "~/Scripts/jquery.unobtrusive-ajax.js"));
         }
     }
 }

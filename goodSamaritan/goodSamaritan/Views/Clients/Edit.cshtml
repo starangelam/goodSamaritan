@@ -7,7 +7,7 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "renderSmartPartial" }))
 {
     @Html.AntiForgeryToken()
 
@@ -106,11 +106,6 @@
         </div>
 
         <div id="renderSmartPartial">A DIV</div>
-
-        <div id="loadingDisplay" style="display: none">
-            <img src="@Url.Content("~/Content/Images/ajax-loader.gif")"
-                 alt="loading image" />
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.AssessmentAssgndTo, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -301,16 +296,16 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
+@Scripts.Render("~/bundles/jquery")
 <script>
     /* This is change event for your dropdownlist */
-    $('#ddlProgramSelect').change(function () {
+    $('select#ddlProgramSelect').change(function () {
         console.log("In DDL change function");
         /* Get the selected value of dropdownlist */
         var selectedID = $(this).val();
 
         /* Request the partial view with .get request. */
-        $.get('/Clients/RenderSmartPartial', function (data) {
+        $.get('/Clients/RenderEditSmartPartial', function (data) {
             console.log("In .GET");
             /* data is the pure html returned from action method, load it to your page */
             $('#renderSmartPartial').html(data);
