@@ -12,6 +12,11 @@
             <li>@Html.ActionLink("SMARTs", "Index", "Smarts")</li>
         }
 
+        if (User.IsInRole("Administrator") || User.IsInRole("Worker") || User.IsInRole("Reporter"))
+        {
+            <li>@Html.ActionLink("Report", "Index", "Report")</li>
+        }
+
         if (User.IsInRole("Administrator"))
         {
             <li class="dropdown">
