@@ -278,7 +278,7 @@
             </div>
         </div>
 
-        <div id="renderSmartPartial">THIS IS A DIV</div>
+        <div id="renderSmartPartial"></div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -300,14 +300,15 @@
         /* Get the selected value of dropdownlist */
         var selectedID = $(this).val();
 
-        /* Request the partial view with .get request. */
-        $.get('/Clients/RenderCreateSmartPartial', function (data) {
-            console.log("In .GET");
-            /* data is the pure html returned from action method, load it to your page */
-            $('#renderSmartPartial').html(data);
-            /* little fade in effect */
-            $('#renderSmartPartial').fadeIn('fast');
-        });
-
+        if (selectedID == 3) {
+            /* Request the partial view with .get request. */
+            $.get('/Clients/RenderCreateSmartPartial', function (data) {
+                console.log("In .GET");
+                /* data is the pure html returned from action method, load it to your page */
+                $('#renderSmartPartial').html(data);
+                /* little fade in effect */
+                $('#renderSmartPartial').fadeIn('fast');
+            });
+        }
     });
 </script>
