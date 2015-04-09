@@ -65,7 +65,15 @@ namespace GoodSamaritan.Models
                     .ToList().Count;
             }
         }
-        public int TotalNoStatusCases { get { return 0; } }
+        public int TotalNoStatusCases
+        {
+            get
+            {
+                return assignedClients
+                    .Where(s => s.StatusOfFile == null)
+                    .ToList().Count;
+            }
+        }
 
         public int TotalSelectedCases
         {
