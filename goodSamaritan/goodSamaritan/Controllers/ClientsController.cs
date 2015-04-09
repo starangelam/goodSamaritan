@@ -19,6 +19,7 @@ namespace GoodSamaritan.Controllers
         // GET: Clients
         public async Task<ActionResult> Index()
         {
+            Console.WriteLine("ClientsController.Index()");
             var clients = db.Clients
                 .Include(c => c.FiscalYear)
                 .Include(c => c.AssignedWorkder)
@@ -242,6 +243,12 @@ namespace GoodSamaritan.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public PartialViewResult RenderSmartPartial()
+        {
+            Console.WriteLine("RenderSmartPartial()");
+            return PartialView("_EditSmartPartial");
         }
     }
 }

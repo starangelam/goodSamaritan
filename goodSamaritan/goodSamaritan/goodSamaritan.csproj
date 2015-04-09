@@ -550,6 +550,7 @@
     <Content Include="Views\BadDateReports\Index.cshtml" />
     <Content Include="Views\Report\Index.cshtml" />
     <Content Include="Views\Report\Report.cshtml" />
+    <Content Include="Views\Clients\_EditSmartPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
