@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app="goodSamaritan">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Good Samaritan</title>
+  <script src="Scripts/jquery-1.10.2.min.js"></script>
+  <link rel="stylesheet" href="Content/bootstrap.min.css" />
+  <script src="Scripts/bootstrap.min.js"></script>
+  <script src="Scripts/angular.js" data-semver="1.4.0-beta.6"></script>
+  <script src="Scripts/angular-route.js"></script>
+  <link rel="stylesheet" href="clientReport/style.css" />
+  <script src="clientReport/app.js"></script>
+  <script src="clientReport/services.js"></script>
+  <script src="clientReport/ctrl_report.js"></script>
+  <script src="clientReport/ctrl_auth.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+  <div class="container">
+    <pre class="console" ng-show="{{showConsole}}"></pre>
+    <div ng-view=""></div>
+  </div>
+</body>
+
+</html>

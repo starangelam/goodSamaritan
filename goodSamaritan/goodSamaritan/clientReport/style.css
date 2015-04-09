@@ -1,0 +1,10 @@
+/* Put your css in here */
+
+.dl-horizontal dt {
+  white-space: normal;
+}
+
+#summary {
+  margin-left: -15px;
+  margin-right: -15px;
+}

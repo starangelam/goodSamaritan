@@ -288,6 +288,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="clientReport\app.js" />
+    <Content Include="clientReport\ctrl_auth.js" />
+    <Content Include="clientReport\ctrl_report.js" />
+    <Content Include="clientReport\login.html" />
+    <Content Include="clientReport\report.html" />
+    <Content Include="clientReport\services.js" />
+    <Content Include="clientReport\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="docs\MigrationScripts.txt" />
@@ -295,6 +302,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Report.html" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="docs\readme.docx" />

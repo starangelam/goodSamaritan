@@ -1,0 +1,131 @@
+<div ng-controller="ReportCtrl">
+  <!-- nav bar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <span class="navbar-brand">Good Samaritan</span>
+      </div>
+      <p class="navbar-text" ng-show="username">
+        Signed in as {{username}},
+        <a href="" ng-click="logout()">logout</a>.
+      </p>
+    </div>
+  </nav>
+
+  <h2>Worker Summary & Detail Report</h2>
+  <div class="help-block"><b>Report Date</b>: {{report.date}}</div>
+
+  <div class="container">
+    <!-- report filter -->
+    <div class="row">
+      <div class="col-md-4 well">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="worker" class="col-sm-6 control-label">Assigned Worker</label>
+            <div class="col-sm-6">
+              <select ng-options="w.AssignedWorkerId as w.Name for w in workers" 
+                ng-model="selectedWorker"
+                ng-change="getReport()"
+                class="form-control" id="worker">
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="status" class="col-sm-6 control-label">File Status</label>
+            <div class="col-sm-6">
+              <select ng-options="s.StatusOfFileId as s.Status for s in statuses"
+                ng-model="selectedStatus"
+                ng-change="getReport()"
+                class="form-control" id="status">
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- report summary -->
+    <div class="row">
+      <div id="summary" class="col-md-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Summary</h3>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <b>Total Count of Assigned in selected Status: </b>
+              {{report.TotalSelectedCases}}
+            </li>
+            <li class="list-group-item">
+              <b>Total Assignments</b>
+              {{report.TotalCases}}
+            </li>
+            <li class="list-group-item">
+              <b>Open Files for Worker</b>
+              {{report.TotalOpenCases}}
+            </li>
+            <li class="list-group-item">
+              <b>Closed Files for Worker</b>
+              {{report.TotalClosedCases}}
+            </li>
+            <li class="list-group-item">
+              <b>Reopened Files for Worker</b>
+              {{report.TotalReopenedCases}}
+            </li>
+            <li class="list-group-item">
+              <b>Status None</b>
+              {{report.TotalNoStatusCases}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- report details -->
+    <div class="row">
+      <h4>Details for Selected Status</h4>
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th><abbr title="Client Reference Number">CRN</abbr></th>
+            <th>Fiscal Year</th>
+            <th>Month</th>
+            <th>Day</th>
+            <th>Program</th>
+            <th>Surname</th>
+            <th>First Name</th>
+            <th>Police File No.</th>
+            <th>Court File No</th>
+            <th>Service</th>
+            <th>Victim of Incident</th>
+            <th>Family Violence File</th>
+            <th>Gender</th>
+            <th>Ethnicity</th>
+            <th>Age</th>
+          </tr>
+          <tbody>
+            <tr ng-repeat="c in report.SelectedCases">
+              <td>{{c.ClientId}}</td>
+              <td>{{c.FiscalYear.Range}}</td>
+              <td>{{months[c.Month - 1]}}</td>
+              <td>{{c.Day}}</td>
+              <td>{{c.Program.Type}}</td>
+              <td>{{c.Surname}}</td>
+              <td>{{c.FirstName}}</td>
+              <td>{{c.PoliceFileNumber}}</td>
+              <td>{{c.CourtFileNumber}}</td>
+              <td>{{c.Service.Type}}</td>
+              <td>{{c.VictimOfIncident.Type}}</td>
+              <td>{{c.FamilyViolenceFile.Exists}}</td>
+              <td>{{c.Gender}}</td>
+              <td>{{c.Ethnicity.Value}}</td>
+              <td>{{c.Age.Range}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- /ng-controll -->
+</div>
