@@ -1,0 +1,100 @@
+﻿@model GoodSamaritan.Models.Report
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Worker Summary & Detail Report</h2>
+<div class="help-block"><b>Report Date</b>: @ViewBag.ReportDate</div>
+
+<div class="container">
+    <!-- report summary -->
+    <div class="row">
+        <div id="summary" class="col-md-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Summary</h3>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <b>Total Count of Assigned in selected Status: </b>
+                        @Model.TotalSelectedCases
+                    </li>
+                    <li class="list-group-item">
+                        <b>Total Assignments</b>
+                        @Model.TotalCases
+                    </li>
+                    <li class="list-group-item">
+                        <b>Open Files for Worker</b>
+                        @Model.TotalOpenCases
+                    </li>
+                    <li class="list-group-item">
+                        <b>Closed Files for Worker</b>
+                        @Model.TotalClosedCases
+                    </li>
+                    <li class="list-group-item">
+                        <b>Reopened Files for Worker</b>
+                        @Model.TotalReopenedCases
+                    </li>
+                    <li class="list-group-item">
+                        <b>Status None</b>
+                        @Model.TotalNoStatusCases
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- report details -->
+    <div class="row">
+        <h4>Details for Selected Status</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>
+                        <abbr title="Client Reference Number">CRN</abbr>
+                    </th>
+                    <th>Fiscal Year</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                    <th>Program</th>
+                    <th>Surname</th>
+                    <th>First Name</th>
+                    <th>Police File No.</th>
+                    <th>Court File No</th>
+                    <th>Service</th>
+                    <th>Victim of Incident</th>
+                    <th>Family Violence File</th>
+                    <th>Gender</th>
+                    <th>Ethnicity</th>
+                    <th>Age</th>
+                </tr>
+                <tbody>
+                    @foreach (var c in Model.SelectedCases)
+                    {
+                        <tr>
+                            <td>@c.ClientId</td>
+                            <td>@c.FiscalYear.Range</td>
+                            <td>@c.Month</td>
+                            <td>@c.Day</td>
+                            <td>@c.Program.Type</td>
+                            <td>@c.Surname</td>
+                            <td>@c.FirstName</td>
+                            <td>@c.PoliceFileNumber</td>
+                            <td>@c.CourtFileNumber</td>
+                            <td>@c.Service.Type</td>
+                            <td>@c.VictimOfIncident.Type</td>
+                            <td>@c.FamilyViolenceFile.Exists</td>
+                            <td>@c.Gender</td>
+                            <td>@c.Ethnicity.Value</td>
+                            <td>@c.Age.Range</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Generate Another Report", "Index")
+</p>
