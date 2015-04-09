@@ -39,12 +39,15 @@ namespace goodSamaritan.Models.Client
         public string PoliceFileNumber { get; set; }
 
         [Range(0, 2147483647)]
+        [Display(Name="Court File Number")]
         public int? CourtFileNumber { get; set; }
 
         [Required]
         [Range(0, 2147483647)]
+        [Display(Name="SWC File Number")]
         public int SWCFileNumber { get; set; }
 
+        [Display(Name="Risk Level")]
         public int RiskLevelId { get; set; }
         public virtual RiskLevel RiskLevel { get; set; }
         
@@ -65,19 +68,24 @@ namespace goodSamaritan.Models.Client
 
         [Required]
         [StringLength(64, MinimumLength=2)]
+        [Display(Name = "Risk Assessment Assigned To")]
         public string AssessmentAssgndTo { get; set; }
 
+        [Display(Name="Risk Status")]
         public int RiskStatusId { get; set; }
         public virtual RiskStatus RiskStatus { get; set; }
 
+        [Display(Name="Assigned Worker")]
         public int AssignedWorkerId { get; set; }
         public virtual AssignedWorker AssignedWorkder { get; set; }
 
         [Required]
+        [Display(Name="Referral Source")]
         public int ReferralSourceId { get; set; }
         public virtual ReferralSource ReferralSource { get; set; }
 
         [Required]
+        [Display(Name = "Referral Contact")]
         public int ReferralContactId { get; set; }
         public virtual ReferralContact ReferralContact { get; set; }
 
@@ -88,16 +96,20 @@ namespace goodSamaritan.Models.Client
         [Required]
         [MaxLength(64), MinLength(4)]
         [RegularExpression(@"[a-zA-Z]{2,}, [a-zA-z]{2,}[a-zA-Z ]*", ErrorMessage="Name must be in surname, first name format. e.g. Smith, Bob")]
+        [Display(Name="Abuser Surname, First Name")]
         public string AbuserSFName { get; set; }
 
         [Required]
+        [Display(Name="Abuser Relationship")]
         public int AbuserRelationshipId { get; set; }
         public virtual AbuserRelationship AbuserRelationship { get; set; }
 
         [Required]
+        [Display(Name="Victim Of Incident")]
         public int VictimOfIncidentId { get; set; }
         public virtual VictimOfIncident VictimOfIncident { get; set; }
 
+        [Display(Name="Family Violence File")]
         public int FamilyViolenceFileId { get; set; }
         public virtual FamilyViolenceFile FamilyViolenceFile { get; set; }
 
@@ -114,28 +126,39 @@ namespace goodSamaritan.Models.Client
         public int AgeId { get; set; }
         public virtual Age Age { get; set; }
 
+        [Display(Name="Repeat Client (current fiscal year only)")]
         public int RepeatClientId { get; set; }
         public virtual RepeatClient RepeatClient { get; set; }
 
+        [Display(Name="Duplicate File (current fiscal year only)")]
         public int DuplicateFileId { get; set; }
         public virtual DuplicateFile DuplicateFile { get; set; }
 
         [Required]
         [Range(0,30)]
+        [Display(Name="Number of Children 0-6")]
         public int NumChildrenZeroToSix { get; set; }
 
         [Required]
         [Range(0, 30)]
+        [Display(Name = "Number of Children 7-12")]
         public int NumChildrenSevenToTwelve { get; set; }
 
         [Required]
+        [Display(Name="Status Of File")]
         public int StatusOfFileId { get; set; }
         public virtual StatusOfFile StatusOfFile { get; set; }
 
+        [Display(Name="Date Last Transferred")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DateLastTransferred { get; set; }
 
+        [Display(Name="Date Closed")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DateClosed { get; set; }
         
+        [Display(Name="Date ReOpened")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DateReOpened { get; set; }
     }
 }
